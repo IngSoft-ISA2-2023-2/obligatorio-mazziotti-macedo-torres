@@ -20,3 +20,5 @@ El procedimiento que elegimos fue el siguiente:
 3. Por último, cuando la issue es resuelta:
     * Se mueve a la columna de **Done**.
     * Se añade la Fecha de Finalización.
+
+De esta manera, el tablero nos permite visualizar el trabajo que se va realizando para poder emplearlo en el Standup Diario, y tener una mayor idea de quien está a cargo de que tarea y en que estado se encuentra.
