@@ -5,7 +5,7 @@ Nuestro tablero consta de tres columnas: Todo, In Progress, y Done, donde cada u
 
 A su vez, la columna de In Progress tiene un límite de WIP (Work In Progress) de tres, definiendose así una tarea a la vez para cada intergrante del equipo.
 
-Cada Tarea va a contar con un Tipo en su descripción, el cuál puede ser Documentación, Instalación de Ambiente, Bug o Análisis de Código.
+Cada Tarea va a contar con un Tipo en su descripción, el cuál puede ser Documentación, Instalación de Ambiente, Bug o Analítico.
 
 El procedimiento que elegimos fue el siguiente:
 

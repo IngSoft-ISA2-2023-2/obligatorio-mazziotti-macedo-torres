@@ -2,7 +2,9 @@
 
 Nombre del tester: 
 
-Duración de la sesión: [ 30 minutos / 1 hora ]
+Duración de la sesión: [ 30 minutos / 1 hora / 1.5 horas / 2 horas ]
+
+Esfuerzo: 
 
 Aspecto a testear: 
 
