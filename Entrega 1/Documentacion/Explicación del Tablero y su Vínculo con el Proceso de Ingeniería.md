@@ -21,16 +21,22 @@ El procedimiento que elegimos fue el siguiente:
     * Se mueve a la columna de **Done**.
     * Se añaden los tiempos y esfuerzo que tomó realizarla.
 
-En el reporte de bugs se utilizarán dos tags:
-* Prioridad, que determina la prioridad. Puede tener los siguientes valores:
-    * Inmediata: plazo máximo 24 hs.
-    * Alta: plazo máximo 48 hs. 
-    * Media: plazo máximo un par de semanas.
-    * Baja: sin plazo.  
-* Severidad:
-    * Critico: un defecto que obstaculice o bloquee completamente la prueba o el uso de un producto o función.
-    * Mayor: una función principal que no cumpla con los requisitos y se comporte de manera diferente a lo esperado. Cuando funciona muy lejos de las expectativas o no está haciendo lo que debería estar haciendo.
-    * Menor: función que no cumpla con sus requisitos y se comporte de manera diferente a lo esperado, pero su impacto es insignificante hasta cierto punto o no tiene un impacto importante en la aplicación.
-    * Leve: defecto cosmético. 
+En el reporte de issues encontrados se utilizarán tres tags:
+* **Prioridad**
+    * Inmediata: Plazo máximo 24 hs.
+    * Alta: Plazo máximo 48 hs. 
+    * Media: Plazo máximo un par de semanas.
+    * Baja: Sin plazo.  
+* **Severidad**
+    * Critico: Un defecto que obstaculice o bloquee completamente la prueba o el uso de un producto o función.
+    * Mayor: Una función principal que no cumpla con los requisitos y se comporte de manera diferente a lo esperado. Cuando funciona muy lejos de las expectativas o no está haciendo lo que debería estar haciendo.
+    * Menor: Función que no cumpla con sus requisitos y se comporte de manera diferente a lo esperado, pero su impacto es insignificante hasta cierto punto o no tiene un impacto importante en la aplicación.
+    * Leve: Defecto cosmético. 
+* **Gravedad**
+    * 1: Código que es posible eliminarlo sin afectar el funcionamiento del programa.
+    * 2: Código que se debe modificar levemente.
+    * 3: Código que se debe repensar.
+    * 4: 
+    * 5: 
 
 De esta manera, el tablero nos permite visualizar el trabajo que se va realizando para poder emplearlo en el Standup Diario, y tener una mayor idea de quien está a cargo de que tarea y en que estado se encuentra.
