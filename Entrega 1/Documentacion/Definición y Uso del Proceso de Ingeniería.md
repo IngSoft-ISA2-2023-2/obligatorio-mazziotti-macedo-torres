@@ -7,4 +7,4 @@ El Proceso de Ingeniería está definido por las ceremonias, sus respectivos rol
 | Análisis de Código | Desarrolladores | Issues | Analizadores de código estático |
 | Testing | Testers | Bugs | Testing exploratorio |
 | Standup Diario | Desarrolladores, Testers, Product Owner | Puesta a punto | Reunión de quince minutos |
-| Retrospectiva | Desarrolladores, Testers, Scrum Master | Posibles cambios en el proceso | Reunión de una o más horas |
+| Retrospectiva | Desarrolladores, Testers, Scrum Master | Posibles cambios en el proceso | Reunión de media o más horas |
