@@ -11,6 +11,10 @@ De eso tratan los siguientes archivos:
 La segunda fue realizar el análisis de deuda técnica, como describe el siguiente archivo:
 * [Análisis de Deuda Técnica](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/b404a1da6a1de9e9723dc9e7fafad91fe0a80717/Entrega%201/Documentacion/An%C3%A1lisis%20de%20Deuda%20T%C3%A9cnica.md)
 
-El registro de horas se realizó en el archivo [Registro de Horas.xlsx](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/b404a1da6a1de9e9723dc9e7fafad91fe0a80717/Entrega%201/Documentacion/Registro%20de%20Horas.xlsx)
+El registro de horas se realizó en el archivo:
+* [Registro de Horas.xlsx](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/b404a1da6a1de9e9723dc9e7fafad91fe0a80717/Entrega%201/Documentacion/Registro%20de%20Horas.xlsx)
 
-Al finalizar la etapa, calculamos un esfuerzo total de 25 horas persona.
+Calculamos un esfuerzo total de 25.5 horas persona. El esfuerzo real, como se menciona en la retrospectiva, fue mayor a esto. Esto se debe a que nos fue difícil registrar correctamente las horas realizadas usando excel.
+
+Al finalizar la etapa, realizamos una retrospectiva, como se detalla en: 
+* [Retrospectiva.md]()
