@@ -86,6 +86,41 @@ Además de nuestro enfoque en el Testing Exploratorio, también hemos llevado a 
 
 En la siguiente sección, detallaremos nuestras observaciones y hallazgos en el análisis estático de código, proporcionando recomendaciones para abordar la deuda técnica y mejorar la calidad del software.
 
-TODO
+La encargada de este análisis fue Fiorella debido a que, al no poder instalar el ambiente por problemas con su computadora mac, no pudo participar demasiado en el Testing Exploratorio.
+
+Luego de una investigación acerca de que analizador estatico de codigo era el mejor, la herramienta que elegimos fue SonarLint, ya que se integraba con Visual Studio Code muy facilmente, y permitia visualizar los errores a simple vista.
+
+A continuación, al igual que con el Testing Exploratorio, presentamos un resumen de las issues identificadas.
+
+Para TypeScript en el Frontend:
+
+- Issue #22
+    - El constructor es innecesario ya que está vacío, y es posible removerlo.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/22)
+- Issue #23
+    - Uso del tipo var en el constructor al asignarle "this" a la variable "self".
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/23)
+- Issue #24
+    - Constructor con nueve parámetros cuando el correcto uso solo permite siete.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/24)
+- Issue #25
+    - Uso de tipos innecesarios en funciones or ("|") debido a la palabra registrada "any", la cual hace referencia a todos los posibles tipos.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/25)
+- Issue #26
+    - Import innecesario el cual es posible remover.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/26)
+- Issue #27
+    - Posible expresión en cadena utilizando el símbolo ?.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/27)
+- Issue #28
+    - Uso redundante de "undefined" cuando es posible removerlo y la función lo recibirá de igual manera.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/28)
+- Issue #29
+    - Variables que no se utilizan y es posible remover su declaración.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/29)
 
 Con estos dos enfoques complementarios, esperamos proporcionar una evaluación completa y útil del backend y frontend existentes, destacando las áreas que requieren atención y acción.
