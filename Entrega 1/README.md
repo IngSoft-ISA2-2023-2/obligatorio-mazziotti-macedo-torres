@@ -17,4 +17,4 @@ El registro de horas se realizó en el archivo:
 Calculamos un esfuerzo total de 25.5 horas persona. El esfuerzo real, como se menciona en la retrospectiva, fue mayor a esto. Esto se debe a que nos fue difícil registrar correctamente las horas realizadas usando excel.
 
 Al finalizar la etapa, realizamos una retrospectiva, como se detalla en: 
-* [Retrospectiva.md]()
+* [Retrospectiva.md](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/main/Entrega%201/Documentacion/Retrospectiva.md)
