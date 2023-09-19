@@ -33,10 +33,10 @@ En el reporte de issues encontrados se utilizarán tres tags:
     * Menor: Función que no cumpla con sus requisitos y se comporte de manera diferente a lo esperado, pero su impacto es insignificante hasta cierto punto o no tiene un impacto importante en la aplicación.
     * Leve: Defecto cosmético. 
 * **Gravedad**
-    * 1: Código que es posible eliminarlo sin afectar el funcionamiento del programa.
+    * 1: Código que se debe eliminar.
     * 2: Código que se debe modificar levemente.
-    * 3: Código que se debe repensar.
-    * 4: 
-    * 5: 
+    * 3: Código que se debe modificar o eliminar, siendo un error conocido, y sumamente conversado en clase.
+    * 4: Código que se debe modificar o eliminar, para evitar errores de funcionamiento.
+    * 5: Código que se debe modificar o eliminar, siendo errores de falta de atencion que alteran el funcionamiento.
 
 De esta manera, el tablero nos permite visualizar el trabajo que se va realizando para poder emplearlo en el Standup Diario, y tener una mayor idea de quien está a cargo de que tarea y en que estado se encuentra.
