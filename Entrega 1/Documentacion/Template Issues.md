@@ -1,13 +1,19 @@
 # Template Sesiones de Testing Exploratorio
 
-Descripción:
+### Descripción
 
-Tipo: [ Bug / Analítico ]
 
-Responsable: 
+### Tipo
+[ Bug / Analítico ]
 
-Lead time: 
+### Responsable
 
-Cycle time: 
 
-Esfuerzo:
+### Lead Time
+
+
+### Cycle Time
+
+
+### Esfuerzo
+
