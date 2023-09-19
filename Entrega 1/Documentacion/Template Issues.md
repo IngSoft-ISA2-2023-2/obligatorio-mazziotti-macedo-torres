@@ -1,4 +1,4 @@
-# Template Sesiones de Testing Exploratorio
+# Template Issues
 
 ### Descripción
 
