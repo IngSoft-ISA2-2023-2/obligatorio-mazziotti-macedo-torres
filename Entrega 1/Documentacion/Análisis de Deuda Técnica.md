@@ -123,4 +123,47 @@ Para TypeScript en el Frontend:
     - Variables que no se utilizan y es posible remover su declaración.
     - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/29)
 
+Para C# en el Backend:
+
+- Issue #30
+    - Código que está comentado y no es relevante, siendo posible removerlo.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/30)
+- Issue #31
+    - Existen atributos que pueden modificarse para ser readonly.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/31)
+- Issue #32
+    - Existen funciones con mismo nombre (pero parámetros distintos) que deberían ser adyacentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/32)
+- Issue #33
+    - Existen funciones que pueden devolver valores nulos sin tenerlos en cuenta.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/33)
+- Issue #34
+    - Es posible modificar la visibilidad de atributos.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/34)
+- Issue #35
+    - El argumento que se le pasa a una función como parámetro puede llegar a ser nulo, y no se tiene verificación previa.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/35)
+- Issue #36
+    - Se le asigna a variables no nuleables, un null.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/36)
+- Issue #37
+    - Doble if que puede ser unido y terminar con uno solo.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/37)
+- Issue #38
+    - Chequeo con la palabra "false" innecesario cuando es posible omitirla.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/38)
+- Issue #39
+    - Se tiene de ambos lados de == a la misma expresión.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/39)
+- Issue #40
+    - Se accede a atributos que pueden ser nulos, y no se verifica dicha operación.
+    - Esta situación se repite en varios componentes.
+    - [Link a la Issue](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/issues/40)
+
 Con estos dos enfoques complementarios, esperamos proporcionar una evaluación completa y útil del backend y frontend existentes, destacando las áreas que requieren atención y acción.
