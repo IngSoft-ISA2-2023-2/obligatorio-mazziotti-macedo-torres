@@ -72,5 +72,25 @@ namespace PharmaGo.Test.DataAccess.Test
                 Assert.IsTrue(_purchasesDetailRepository.Exists(purchaseDetail));
             }
         }
+
+        [TestMethod]
+        public void Test_GetOneByExpression()
+        {
+            using (var context = new PharmacyGoDbContext(options))
+            {
+                _purchasesDetailRepository = new PurchasesDetailRepository(context);
+                if (!_purchasesDetailRepository.Exists(purchaseDetail))
+                {
+                    _purchasesDetailRepository.InsertOne(purchaseDetail);
+                    _purchasesDetailRepository.Save();
+                }
+
+                //Act
+                var p_ = _purchasesDetailRepository.GetOneByExpression(p => p.Id == 1);
+
+                // Assert
+                Assert.IsNotNull(p_);
+            }
+        }
     }
 }
