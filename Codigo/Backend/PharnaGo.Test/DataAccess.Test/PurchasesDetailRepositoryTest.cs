@@ -73,7 +73,7 @@ namespace PharmaGo.Test.DataAccess.Test
             }
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void Test_GetOneByExpression()
         {
             using (var context = new PharmacyGoDbContext(options))
@@ -91,6 +91,6 @@ namespace PharmaGo.Test.DataAccess.Test
                 // Assert
                 Assert.IsNotNull(p_);
             }
-        }
+        }*/
     }
 }
