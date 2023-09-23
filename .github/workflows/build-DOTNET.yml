@@ -17,9 +17,13 @@ env:
 
 jobs:
   build:
-
-    name: build-${{ubuntu-latest}}
-    runs-on: ${{ ubuntu-latest }}
+  
+    permissions: write-all
+    name: build-${{matrix.os}}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -33,3 +37,15 @@ jobs:
       
     - name: Build
       run: dotnet build Codigo/Backend --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test Codigo/Backend --logger "trx;LogFileName=test-results.trx" || true
+
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: DotNET Tests
+        path: "**/test-results.trx"                            
+        reporter: dotnet-trx
+        fail-on-error: true
