@@ -18,8 +18,11 @@ env:
 jobs:
   build:
 
-    name: build-${{ubuntu-latest}}
-    runs-on: ${{ ubuntu-latest }}
+    name: build-${{matrix.os}}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v3
