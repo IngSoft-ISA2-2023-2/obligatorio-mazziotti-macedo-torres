@@ -235,9 +235,9 @@ namespace PharmaGo.BusinessLogic
             {
                 if (start > end)
                     throw new InvalidResourceException($"Start date can't be bigger than End date");
-
+                
                 Expression<Func<Purchase, bool>> purchaseFilter = (purchase =>
-                     purchase.PurchaseDate <= end && purchase.PurchaseDate >= start);
+                     purchase.PurchaseDate <= new DateTime(end.Value.Year, end.Value.Month, end.Value.Day, 23, 59, 59) && purchase.PurchaseDate >= new DateTime(start.Value.Year, start.Value.Month, start.Value.Day, 00, 00, 00));
                 IEnumerable<Purchase> list = _purchasesRepository.GetAllByExpression(purchaseFilter).ToList();
 
                 return GetPurchases(pharmacy, list);
