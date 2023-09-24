@@ -1,6 +1,10 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.VisualBasic;
 using Moq;
 using PharmaGo.BusinessLogic;
+using PharmaGo.DataAccess;
+using PharmaGo.DataAccess.Repositories;
 using PharmaGo.Domain.Entities;
 using PharmaGo.Exceptions;
 using PharmaGo.IDataAccess;
@@ -471,6 +475,44 @@ namespace PharmaGo.Test.BusinessLogic.Test
             Assert.AreEqual(response.Count, 1);
         }
 
+        [TestMethod]
+        public void Get_All_Purchases_By_Date_Same_Start_And_End_Date()
+        {
+            //Arrange
+            DateTime? start = new DateTime(2022, 09, 19, 12, 34, 44);
+            DateTime? end = new DateTime(2022, 09, 19, 12, 35, 44);
+
+            PurchasesRepository purchaseRepository = new PurchasesRepository(
+                new PharmacyGoDbContext(
+                    new DbContextOptionsBuilder<PharmacyGoDbContext>()
+                        .UseInMemoryDatabase(databaseName: "PharmaGoDb")
+                        .Options));
+
+            PurchasesManager purchasesManager = new PurchasesManager(purchaseRepository, _pharmacyRespository.Object, _drugsRespository.Object,
+            _purchaseDetailRespository.Object, _sessionRespository.Object, _userRespository.Object);
+
+            var guidToken = new Guid(token);
+            _sessionRespository.Setup(z => z.GetOneByExpression(s => s.Token == guidToken))
+                .Returns(new Session { Id = 1, Token = guidToken, UserId = 1 });
+            _userRespository.Setup(u => u.GetOneDetailByExpression(u => u.Id == 1))
+                .Returns(user);
+
+            purchaseRepository.InsertOne(purchase);
+            purchaseRepository.Save();
+
+            //Act
+            var response = purchasesManager.GetAllPurchasesByDate(token, start, end);
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.AreEqual(response.Count, 1);
+
+            if (purchaseRepository.Exists(purchase))
+            {
+                purchaseRepository.DeleteOne(purchase);
+                purchaseRepository.Save();
+            }
+        }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidResourceException))]
