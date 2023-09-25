@@ -173,9 +173,6 @@ namespace PharmaGo.Test.BusinessLogic.Test
             _sessionMock.Setup(d => d.GetOneByExpression(It.IsAny<Expression<Func<Session, bool>>>())).Returns(session);
             _employeeMock.Setup(d => d.GetOneDetailByExpression(It.IsAny<Expression<Func<User, bool>>>())).Returns(user);
 
-            _stockRequestMock.Setup(s => s.InsertOne(It.IsAny<StockRequest>()));
-            _stockRequestMock.Setup(s => s.Save());
-
             var result = _stockRequestManager.CreateStockRequest(stockRequest, token);
         }
 
