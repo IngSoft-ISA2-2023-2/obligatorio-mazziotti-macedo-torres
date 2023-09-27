@@ -2,8 +2,12 @@ name: Angular GitHub CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'Codigo/Frontend/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'Codigo/Frontend/**'
 
 jobs:
   ci:
