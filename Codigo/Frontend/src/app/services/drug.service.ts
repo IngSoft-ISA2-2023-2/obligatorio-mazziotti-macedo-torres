@@ -121,4 +121,4 @@ export class DrugService {
     this.commonService.updateToastData(message, "danger", "Error");
   }
 }
- 
+  
