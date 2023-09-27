@@ -57,11 +57,11 @@ En este documento, se analizará en detalle cómo se aplicó esta práctica adop
 
       Si probamos buscar las compras de un día en particular (16/09/2023), no se muestra ninguna compra.
       
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Error(1).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Error%20(1).png)
 
       Sin embargo, al expandir la busqueda un día más (17/09/2023), se puede ver que en realidad si existían compras en el día anterior (16/09/2023).
 
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Error(2).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Error%20(2).png)
 
     - El test realizado:
       
@@ -69,17 +69,17 @@ En este documento, se analizará en detalle cómo se aplicó esta práctica adop
       
     - En estado Red:
  
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Red(1).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Red%20(1).png)
 
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Red(2).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Red%20(2).png)
       
     - En estado Green:
  
       Lo que ocurría era un error al tomar las horas del start y end date, por lo que añadió la especificación de que sea desde las 00:00:00 hasta las 23:59:59. 
  
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Green(1).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Green%20(1).png)
 
-      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Green(2).png)
+      ![](../Imágenes/Issue%20%2321/Issue%20%2321%20-%20Green%20(2).png)
 
     - Visualizando el arreglo:
 
