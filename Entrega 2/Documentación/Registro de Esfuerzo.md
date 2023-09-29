@@ -20,10 +20,19 @@ En el caso de los meetings, en los que participa más de un integrante, cada int
 
 A continuación el registro de esfuerzo dividido según las categorías ya mencionadas:
 
-![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/1a83aeaa-ad55-4ce5-9f15-eeffb7654e9c)
+![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/ebf14581-cc80-4b47-93db-333f6ba45907)
 
 Las horas realizadas según integrante:
 
-[Foto de las horas](http://about:blank)
+![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/fcf89e54-bffc-49d6-8fe2-e01fedd64e68)
+
+Las horas dedicadas a las issues se dividieron de la siguiente manera:
+
+![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/3d0f2272-59df-4602-9b9f-9287a8e7a7a6)
+
+![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/84924577-308e-43eb-b2e6-12276156b050)
+
+![image](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/assets/89783659/71ee7268-6abc-4a09-bc85-9dba17de706d)
+
 
 Para ver los nombres de las tareas realizadas en cada categoría, y sus autores, se puede acceder al siguiente [link](https://app.clockify.me/shared/651501e0aa5e0f3ecca2c8b8).
