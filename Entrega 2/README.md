@@ -22,7 +22,7 @@ Se solucionaron tres bugs preexistentes en la aplicación. En los siguientes doc
 
 Para mantener una visión clara del esfuerzo realizado por cada miembro del equipo, se ha creado un documento que detalla las contribuciones individuales durante esta etapa. Esto nos permite evaluar la distribución de tareas y la productividad de cada miembro:
 
-* [Registro de Esfuerzo del Equipo](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/4f250c2d13ce43ff67827aea00c89a2e3d62bef4/Entrega%202/Documentaci%C3%B3n/Registro%20de%20Esfuerzo.md)
+* [Registro de Esfuerzo del Equipo](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/main/Entrega%202/Documentaci%C3%B3n/Registro%20de%20Esfuerzo.md)
 
 Un resumen de la retrospectiva se puede leer en el siguiente archivo:
 * [Retrospectiva](https://github.com/IngSoft-ISA2-2023-2/obligatorio-mazziotti-macedo-torres/blob/4f250c2d13ce43ff67827aea00c89a2e3d62bef4/Entrega%202/Documentaci%C3%B3n/Retrospectiva.md)
