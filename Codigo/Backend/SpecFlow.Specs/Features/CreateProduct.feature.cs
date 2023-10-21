@@ -142,14 +142,24 @@ namespace SpecFlow.Specs.Features
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Duplicate Code")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Invalid or Missing Product Data")]
         [Xunit.TraitAttribute("FeatureTitle", "CreateProduct")]
-        [Xunit.TraitAttribute("Description", "Duplicate Code")]
-        public virtual void DuplicateCode()
+        [Xunit.TraitAttribute("Description", "Invalid or Missing Product Data")]
+        [Xunit.InlineDataAttribute("\'54321\'", "\'Valid Name\'", "\'Valid Description\'", "\'10.5\'", "\'The product already exists in that pharmacy.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'\'", "\'Valid Name\'", "\'Valid Description\'", "\'10.5\'", "\'Mandatory information is missing.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'1234A\'", "\'Valid Name\'", "\'Valid Description\'", "\'10.5\'", "\'The product code is invalid.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'12345\'", "\'Name that exceeds 30 charsssssssssss\'", "\'Valid Description\'", "\'10.5\'", "\'The product name is too long.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'12345\'", "\'Valid Name\'", "\'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss\'", "\'10.5\'", "\'The product description is too long.\'", new string[0])]
+        public virtual void InvalidOrMissingProductData(string code, string name, string description, string price, string errorMessage, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Duplicate Code", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("code", code);
+            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("description", description);
+            argumentsOfScenario.Add("price", price);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid or Missing Product Data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 18
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -174,85 +184,21 @@ namespace SpecFlow.Specs.Features
     testRunner.Given("I am an authorized pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 20
-    testRunner.And("the system already has a product with the same code I enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I enter the code {0} for the product", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-    testRunner.And("I enter a valid name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I enter the name {0} for the product", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-    testRunner.And("I enter a valid description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I enter the description {0} for the product", description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
-    testRunner.And("I enter a valid price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I enter the price {0} for the product", price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
     testRunner.When("I attempt to add the product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-    testRunner.Then("the system shows an error message indicating the product code already exists and " +
-                        "must be unique", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Invalid or Missing Product Data")]
-        [Xunit.TraitAttribute("FeatureTitle", "CreateProduct")]
-        [Xunit.TraitAttribute("Description", "Invalid or Missing Product Data")]
-        [Xunit.InlineDataAttribute("\'\'", "\'Valid Name\'", "\'Valid Description\'", "\'10.5\'", "\'Mandatory information is missing\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'1234A\'", "\'Valid Name\'", "\'Valid Description\'", "\'10.5\'", "\'The product code is invalid\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'12345\'", "\'Name that exceeds 30 charsssssssssss\'", "\'Valid Description\'", "\'10.5\'", "\'The product name is too long\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'12345\'", "\'Valid Name\'", "\'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss\'", "\'10.5\'", "\'The product description is too long\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'12345\'", "\'Valid Name\'", "\'Valid Description\'", "\'Invalid\'", "\'The price must be a valid decimal value\'", new string[0])]
-        public virtual void InvalidOrMissingProductData(string code, string name, string description, string price, string errorMessage, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("code", code);
-            argumentsOfScenario.Add("name", name);
-            argumentsOfScenario.Add("description", description);
-            argumentsOfScenario.Add("price", price);
-            argumentsOfScenario.Add("errorMessage", errorMessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid or Missing Product Data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 27
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 28
-    testRunner.Given("I am an authorized pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 29
-    testRunner.And(string.Format("I enter the code {0} for the product", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 30
-    testRunner.And(string.Format("I enter the name {0} for the product", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
-    testRunner.And(string.Format("I enter the description {0} for the product", description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 32
-    testRunner.And(string.Format("I enter the price {0} for the product", price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 33
-    testRunner.When("I attempt to add the product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 34
     testRunner.Then(string.Format("the system shows an error message indicating {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

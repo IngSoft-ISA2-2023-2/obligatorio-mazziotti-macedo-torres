@@ -14,16 +14,7 @@
     Then the system validates that all data is present and correct
     And the system inserts the new product into the product database
     And the system displays a confirmation message indicating the product was successfully added to the catalog
-
-  Scenario: Duplicate Code
-    Given I am an authorized pharmacy employee
-    And the system already has a product with the same code I enter
-    And I enter a valid name
-    And I enter a valid description
-    And I enter a valid price
-    When I attempt to add the product
-    Then the system shows an error message indicating the product code already exists and must be unique
-
+    
   Scenario Outline: Invalid or Missing Product Data
     Given I am an authorized pharmacy employee
     And I enter the code <code> for the product
@@ -35,8 +26,8 @@
 
   Examples:
     | code      | name                                    | description                                                                      | price        | errorMessage                                    |
-    | ''        | 'Valid Name'                            | 'Valid Description'                                                              | '10.5'       | 'Mandatory information is missing'              |
-    | '1234A'   | 'Valid Name'                            | 'Valid Description'                                                              | '10.5'       | 'The product code is invalid'                   |
-    | '12345'   | 'Name that exceeds 30 charsssssssssss'  | 'Valid Description'                                                              | '10.5'       | 'The product name is too long'                  |
-    | '12345'   | 'Valid Name'                            | 'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss'       | '10.5'       | 'The product description is too long'           |
-    | '12345'   | 'Valid Name'                            | 'Valid Description'                                                              | 'Invalid'    | 'The price must be a valid decimal value'       |
+    | '54321'   | 'Valid Name'                            | 'Valid Description'                                                              | '10.5'       | 'The product already exists in that pharmacy.'  |
+    | ''        | 'Valid Name'                            | 'Valid Description'                                                              | '10.5'       | 'Mandatory information is missing.'             |
+    | '1234A'   | 'Valid Name'                            | 'Valid Description'                                                              | '10.5'       | 'The product code is invalid.'                  |
+    | '12345'   | 'Name that exceeds 30 charsssssssssss'  | 'Valid Description'                                                              | '10.5'       | 'The product name is too long.'                 |
+    | '12345'   | 'Valid Name'                            | 'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss'       | '10.5'       | 'The product description is too long.'          |

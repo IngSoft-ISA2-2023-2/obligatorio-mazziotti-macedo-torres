@@ -48,11 +48,11 @@ namespace SpecFlow.Specs.StepDefinitions
 
             _productModel = new ProductModel();
 
-            if (_productRepository.GetAllByExpression(p => p.Code == "1234A").Count() == 0)
+            if (_productRepository.GetAllByExpression(p => p.Code == "54321").Count() == 0)
             {
                 Product product = new Product()
                 {
-                    Code = "1234A",
+                    Code = "54321",
                     Name = "Name",
                     Description = "Description",
                     Price = 10.5M,
@@ -136,52 +136,41 @@ namespace SpecFlow.Specs.StepDefinitions
             Assert.Equal(StatusCodes.Status200OK, result.StatusCode.Value);
         }
 
-        [Given(@"the system already has a product with the same code I enter")]
-        public void GivenTheSystemAlreadyHasAProductWithTheSameCodeIEnter()
-        {
-            //throw new PendingStepException();
-        }
-
         [When(@"I attempt to add the product")]
         public void WhenIAttemptToAddTheProduct()
         {
-            //throw new PendingStepException();
-        }
-
-        [Then(@"the system shows an error message indicating the product code already exists and must be unique")]
-        public void ThenTheSystemShowsAnErrorMessageIndicatingTheProductCodeAlreadyExistsAndMustBeUnique()
-        {
-            //throw new PendingStepException();
+            _response = _productController.Create(_productModel);
         }
 
         [Given(@"I enter the code '([^']*)' for the product")]
-        public void GivenIEnterTheCodeForTheProduct(string p0)
+        public void GivenIEnterTheCodeForTheProduct(string code)
         {
-            //throw new PendingStepException();
+            _productModel.Code = code;
         }
 
         [Given(@"I enter the name '([^']*)' for the product")]
-        public void GivenIEnterTheNameForTheProduct(string p0)
+        public void GivenIEnterTheNameForTheProduct(string name)
         {
-            //throw new PendingStepException();
+            _productModel.Name = name;
         }
 
         [Given(@"I enter the description '([^']*)' for the product")]
-        public void GivenIEnterTheDescriptionForTheProduct(string p0)
+        public void GivenIEnterTheDescriptionForTheProduct(string description)
         {
-            //throw new PendingStepException();
+            _productModel.Description = description;
         }
 
         [Given(@"I enter the price '([^']*)' for the product")]
-        public void GivenIEnterThePriceForTheProduct(string p0)
+        public void GivenIEnterThePriceForTheProduct(string price)
         {
-            //throw new PendingStepException();
+            _productModel.Price = decimal.Parse(price);
         }
 
         [Then(@"the system shows an error message indicating '([^']*)'")]
-        public void ThenTheSystemShowsAnErrorMessageIndicating(string p0)
+        public void ThenTheSystemShowsAnErrorMessageIndicating(string errorMessage)
         {
-            //throw new PendingStepException();
+            var result = _response as ObjectResult;
+            Assert.Equal(errorMessage, result.Value);
         }
     }
 }
