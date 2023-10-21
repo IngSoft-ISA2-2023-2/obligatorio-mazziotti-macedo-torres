@@ -22,6 +22,7 @@ namespace PharmaGo.Factory
             serviceCollection.AddScoped<IPurchasesManager, PurchasesManager>();
             serviceCollection.AddScoped<IPharmacyManager, PharmacyManager>();
             serviceCollection.AddScoped<IDrugManager, DrugManager>();
+            serviceCollection.AddScoped<IProductManager, ProductManager>();
             serviceCollection.AddScoped<IPresentationManager, PresentationManager>();
             serviceCollection.AddScoped<IUnitMeasureManager, UnitMeasureManager>();
             serviceCollection.AddScoped<IExportManager, ExportManager>();
@@ -40,6 +41,7 @@ namespace PharmaGo.Factory
             serviceCollection.AddScoped<IRepository<Purchase>, PurchasesRepository>();
             serviceCollection.AddScoped<IRepository<Presentation>, PresentationRepository>();
             serviceCollection.AddScoped<IRepository<Drug>, DrugRepository>();
+            serviceCollection.AddScoped<IRepository<Product>, ProductRepository>();
             serviceCollection.AddScoped<IRepository<PurchaseDetail>, PurchasesDetailRepository>();
             serviceCollection.AddScoped<IRepository<Role>, RoleRepository>();
 
