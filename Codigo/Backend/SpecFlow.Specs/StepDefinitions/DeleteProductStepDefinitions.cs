@@ -89,7 +89,8 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I delete the product")]
         public void WhenISelectTheProductIWantToDelete()
         {
-            List<ProductDetailModel> products = _productController.GetAll().Value;
+            OkObjectResult response = (OkObjectResult)_productController.GetAll();
+            IEnumerable<ProductDetailModel> products = (IEnumerable<ProductDetailModel>)response.Value;
             var product = products.FirstOrDefault(p => p.Code.Equals("66666"));
             _response = _productController.Delete(product.Id);
         }

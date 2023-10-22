@@ -28,6 +28,10 @@ namespace PharmaGo.BusinessLogic
             _userRepository = userRepository;
         }
 
+        public IEnumerable<Product> GetAll()
+        {
+            return _productRepository.GetAllByExpression(t => true);
+        }
 
         public Product Create(Product product, string token)
         {

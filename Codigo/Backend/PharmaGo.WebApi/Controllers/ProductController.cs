@@ -22,6 +22,14 @@ namespace PharmaGo.WebApi.Controllers
             _productManager = manager;
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            IEnumerable<Product> products = _productManager.GetAll();
+            IEnumerable<ProductDetailModel> productsToReturn = products.Select(d => new ProductDetailModel(d));
+            return Ok(productsToReturn);
+        }
+
         [HttpPost]
         [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
         public IActionResult Create([FromBody] ProductModel productModel)
@@ -38,7 +46,7 @@ namespace PharmaGo.WebApi.Controllers
         {
             string token = HttpContext.Request.Headers["Authorization"];
             _productManager.Delete(id);
-            return Ok();
+            return Ok(200);
         }
     }
 }
