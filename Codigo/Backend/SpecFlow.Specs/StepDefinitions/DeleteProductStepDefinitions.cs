@@ -26,7 +26,7 @@ namespace SpecFlow.Specs.StepDefinitions
         private ProductManager _productManager;
         private ProductController _productController;
         private IActionResult _response;
-        private int _productId = 54321;
+        private string _responseError;
 
         [BeforeScenario]
         public void Setup()
@@ -45,46 +45,29 @@ namespace SpecFlow.Specs.StepDefinitions
             _productManager = new ProductManager(_productRepository, _pharmacyRepository, _sessionRepository, _userRepository);
 
             _productController = new ProductController(_productManager);
-
-            _productModel = new ProductModel();
-
-            if (_productRepository.GetAllByExpression(p => p.Code == "54321").Count() == 0)
-            {
-                Product product = new Product()
-                {
-                    Id = _productId,
-                    Code = "54321",
-                    Name = "Name",
-                    Description = "Description",
-                    Price = 10.5M,
-                    Pharmacy = _pharmacyRepository.GetOneByExpression(f => f.Id == 1)
-                };
-
-                _productRepository.InsertOne(product);
-                _productRepository.Save();
-            }
-
-            List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "12345").ToList();
-
-            /*
-            if (products.Count() == 1)
-            {
-                _productRepository.DeleteOne(products[0]);
-                _productRepository.Save();
-            }
-            */
         }
 
         [Given(@"that I am an authorized pharmacy employee")]
         public void GivenThatIAmAnAuthorizedEmployeeOfThePharmacy()
         {
             var httpContext = new DefaultHttpContext();
-            httpContext.Request.Headers["Authorization"] = "sE9E0E1E9-3812-4EB5-949E-AE92AC931401";
+            httpContext.Request.Headers["Authorization"] = "E9E0E1E9-3812-4EB5-949E-AE92AC931401";
 
             _productController.ControllerContext = new ControllerContext()
             {
                 HttpContext = httpContext
             };
+
+            var name = _pharmacyRepository.GetOneByExpression(f => f.Id == 1).Name;
+            _productModel = new ProductModel()
+            {
+                Code = "12345",
+                Name = "Valid Name",
+                Description = "Valid Description",
+                Price = 10.5M,
+                PharmacyName = name
+            };
+            _productController.Create(_productModel);
         }
 
         [Given(@"I select the option to delete a product")]
@@ -102,7 +85,8 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I delete the product")]
         public void WhenISelectTheProductIWantToDelete()
         {
-            _response = _productController.Delete(_productId);
+
+            _response = _productController.Delete(0);
         }
 
         [Then(@"the system marks the product as ""([^""]*)"" in the database")]
@@ -124,14 +108,21 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I attempt to delete a product that does not exist in the system")]
         public void WhenIAttemptToDeleteAProductThatDoesNotExistInTheSystem()
         {
-            _response = _productController.Delete(_productId + _productId);
+            var nonexistentProductId = 123456789;
+            try
+            {
+                _response = _productController.Delete(nonexistentProductId);
+            }
+            catch (Exception ex)
+            {
+                _responseError = ex.Message;
+            }
         }
 
         [Then(@"the system informs me that the product does not exist")]
         public void ThenTheSystemInformsMeThatTheProductDoesNotExist()
         {
-            var result = _response as ObjectResult;
-            Assert.Equal(StatusCodes.Status404NotFound, result.StatusCode.Value);
+            Assert.Equal("The drug to delete does not exist.", _responseError);
         }
 
         [Then(@"takes no action")]
