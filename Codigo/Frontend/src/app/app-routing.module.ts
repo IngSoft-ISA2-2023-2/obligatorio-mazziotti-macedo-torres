@@ -29,6 +29,8 @@ import { InvitationComponent } from './pages/owner/invitation/invitation.compone
 import { CreatePharmacyComponent } from './pages/admin/create-pharmacy/create-pharmacy.component';
 import { StockRequestOwnerComponent } from './pages/owner/stock-request-owner/stock-request-owner.component';
 import { CreateProductComponent } from './pages/employee/create-product/create-product.component';
+import { EditProductListComponent } from './pages/employee/edit-product-list/edit-product-list.component';
+import { EditProductComponent } from './pages/employee/edit-product/edit-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: 'employee/create-request', component: CreateRequestComponent, canActivate: [AuthenticationGuard], data: {roles: ['Employee'] } },
   { path: 'employee/export-drugs', component: ExportDrugsComponent, canActivate: [AuthenticationGuard], data: {roles: ['Employee'] } },
   { path: 'employee/create-product', component: CreateProductComponent, canActivate: [AuthenticationGuard], data: {roles: ['Employee'] } },
+  { path: 'employee/edit-product-list', component: EditProductListComponent, data: {roles: ['Employee'] } },
+  { path: 'employee/edit-product', component: EditProductComponent, data: {roles: ['Employee'] } },
   { path: 'admin', component: AdminComponent, canActivate: [AuthenticationGuard], data: {roles: ['Administrator'] }},
   { path: 'admin/create-invitation', component: CreateInvitationComponent, canActivate: [AuthenticationGuard], data: {roles: ['Administrator'] }},
   { path: 'admin/list-invitation', component: ListInvitationComponent, canActivate: [AuthenticationGuard], data: {roles: ['Administrator'] }},
