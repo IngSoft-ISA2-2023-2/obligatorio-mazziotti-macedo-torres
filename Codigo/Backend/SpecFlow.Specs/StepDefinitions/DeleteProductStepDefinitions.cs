@@ -26,11 +26,12 @@ namespace SpecFlow.Specs.StepDefinitions
         private ProductManager _productManager;
         private ProductController _productController;
         private IActionResult _response;
+        private int _productId = 54321;
 
         [BeforeScenario]
         public void Setup()
         {
-            var connectionString = "Server=LAPTOP-KE22VQHH;Database=PharmaGoDb;Trusted_Connection=True; MultipleActiveResultSets=True";
+            var connectionString = "Server=localhost\\SQLEXPRESS;Database=PharmaGoDb;Trusted_Connection=True; MultipleActiveResultSets=True";
             var optionsBuilder = new DbContextOptionsBuilder<PharmacyGoDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
@@ -51,6 +52,7 @@ namespace SpecFlow.Specs.StepDefinitions
             {
                 Product product = new Product()
                 {
+                    Id = _productId,
                     Code = "54321",
                     Name = "Name",
                     Description = "Description",
@@ -100,7 +102,7 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I delete the product")]
         public void WhenISelectTheProductIWantToDelete()
         {
-            _response = _productController.Delete(_productModel);
+            _response = _productController.Delete(_productId);
         }
 
         [Then(@"the system marks the product as ""([^""]*)"" in the database")]
@@ -122,9 +124,7 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I attempt to delete a product that does not exist in the system")]
         public void WhenIAttemptToDeleteAProductThatDoesNotExistInTheSystem()
         {
-            var _nonexistantProduct = new ProductModel();
-
-            _response = _productController.Delete(_nonexistantProduct);
+            _response = _productController.Delete(_productId + _productId);
         }
 
         [Then(@"the system informs me that the product does not exist")]
