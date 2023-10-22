@@ -9,6 +9,7 @@ using PharmaGo.IBusinessLogic;
 using PharmaGo.IDataAccess;
 using PharmaGo.WebApi.Controllers;
 using PharmaGo.WebApi.Models.In;
+using PharmaGo.WebApi.Models.Out;
 using System;
 using TechTalk.SpecFlow;
 
@@ -58,16 +59,19 @@ namespace SpecFlow.Specs.StepDefinitions
                 HttpContext = httpContext
             };
 
-            var name = _pharmacyRepository.GetOneByExpression(f => f.Id == 1).Name;
-            _productModel = new ProductModel()
+            if (_productRepository.GetAllByExpression(p => p.Code == "66666").Count() == 0)
             {
-                Code = "12345",
-                Name = "Valid Name",
-                Description = "Valid Description",
-                Price = 10.5M,
-                PharmacyName = name
-            };
-            _productController.Create(_productModel);
+                var name = _pharmacyRepository.GetOneByExpression(f => f.Id == 1).Name;
+                _productModel = new ProductModel()
+                {
+                    Code = "66666",
+                    Name = "Valid Name",
+                    Description = "Valid Description",
+                    Price = 10.5M,
+                    PharmacyName = name
+                };
+                _productController.Create(_productModel);
+            }
         }
 
         [Given(@"I select the option to delete a product")]
@@ -85,14 +89,15 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I delete the product")]
         public void WhenISelectTheProductIWantToDelete()
         {
-
-            _response = _productController.Delete(0);
+            List<ProductDetailModel> products = _productController.GetAll().Value;
+            var product = products.FirstOrDefault(p => p.Code.Equals("66666"));
+            _response = _productController.Delete(product.Id);
         }
 
         [Then(@"the system marks the product as ""([^""]*)"" in the database")]
         public void ThenTheSystemMarksTheProductAsInTheDatabase(string unavailable)
         {
-            List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "12345").ToList();
+            List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "66666").ToList();
 
             Assert.Single(products);
             Assert.True(products[0].Deleted);
