@@ -28,5 +28,9 @@ namespace PharmaGo.DataAccess.Repositories
         {
             return _context.Set<Product>().Include(x => x.Pharmacy).Where(expression);
         }
+        public override Product GetOneByExpression(Expression<Func<Product, bool>> expression)
+        {
+            return _context.Set<Product>().Include("Pharmacy").FirstOrDefault(expression);
+        }
     }
 }
