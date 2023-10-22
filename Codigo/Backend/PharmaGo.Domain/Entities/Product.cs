@@ -26,7 +26,7 @@ namespace PharmaGo.Domain.Entities
             if (string.IsNullOrEmpty(Code) || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Description)
                     || Price <= 0 || Pharmacy == null)
                 throw new InvalidResourceException("Mandatory information is missing.");
-            if (Regex.IsMatch(Code, @"^\d{5}$"))
+            if (!Regex.IsMatch(Code, @"^\d{5}$"))
                 throw new InvalidResourceException("The product code is invalid.");
             if (Name.Length > 30)
                 throw new InvalidResourceException("The product name is too long.");

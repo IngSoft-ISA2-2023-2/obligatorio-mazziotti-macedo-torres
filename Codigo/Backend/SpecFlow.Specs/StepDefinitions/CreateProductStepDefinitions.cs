@@ -27,6 +27,7 @@ namespace SpecFlow.Specs.StepDefinitions
         private ProductManager _productManager;
         private ProductController _productController;
         private IActionResult _response;
+        private string _responseError;
 
         [BeforeScenario]
         public void Setup()
@@ -76,7 +77,7 @@ namespace SpecFlow.Specs.StepDefinitions
         public void GivenIAmAnAuthorizedPharmacyEmployee()
         {
             var httpContext = new DefaultHttpContext();
-            httpContext.Request.Headers["Authorization"] = "Bearer E9E0E1E9-3812-4EB5-949E-AE92AC931401";
+            httpContext.Request.Headers["Authorization"] = "E9E0E1E9-3812-4EB5-949E-AE92AC931401";
 
             _productController.ControllerContext = new ControllerContext()
             {
@@ -139,7 +140,14 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I attempt to add the product")]
         public void WhenIAttemptToAddTheProduct()
         {
-            _response = _productController.Create(_productModel);
+            try
+            {
+                _response = _productController.Create(_productModel);
+            }
+            catch (Exception e)
+            {
+                _responseError = e.Message;
+            }
         }
 
         [Given(@"I enter the code '([^']*)' for the product")]
@@ -169,8 +177,7 @@ namespace SpecFlow.Specs.StepDefinitions
         [Then(@"the system shows an error message indicating '([^']*)'")]
         public void ThenTheSystemShowsAnErrorMessageIndicating(string errorMessage)
         {
-            var result = _response as ObjectResult;
-            Assert.Equal(errorMessage, result.Value);
+            Assert.Equal(errorMessage, _responseError);
         }
     }
 }
