@@ -30,6 +30,7 @@ import { CreatePharmacyComponent } from './pages/admin/create-pharmacy/create-ph
 import { StockRequestOwnerComponent } from './pages/owner/stock-request-owner/stock-request-owner.component';
 import { CreateProductComponent } from './pages/employee/create-product/create-product.component';
 import { DeleteProductComponent } from './pages/employee/delete-product/delete-product.component';
+import { DetailProductComponent } from './pages/home/detail-product/detail-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'home/cart', component: CartComponent },
   { path: 'home/cart/cho', component: ChoComponent },
   { path: 'home/detail/:id', component: DetailComponent },
+  { path: 'home/detail-product/:id', component: DetailProductComponent },
   { path: 'home/tracking', component: TrackingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

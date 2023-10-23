@@ -67,6 +67,4 @@ export class TrackingComponent implements OnInit {
     }
     this.commonService.updateHeaderData(this.cart.length);
   }
-
-  
 }

@@ -37,9 +37,8 @@ import { ModalModule } from '@coreui/angular';
 import { HomeComponent } from './pages/home/home/home.component';
 import { CartComponent } from './pages/home/cart/cart.component';
 import { ChoComponent } from './pages/home/cho/cho.component';
-
-
 import { DetailComponent } from './pages/home/detail/detail.component';
+import { DetailProductComponent } from './pages/home/detail-product/detail-product.component';
 import { TrackingComponent } from './pages/home/tracking/tracking.component';
 import { Page404Component } from './pages/home/page404/page404.component';
 
@@ -88,6 +87,7 @@ import { StockRequestOwnerComponent } from './pages/owner/stock-request-owner/st
     CartComponent,
     ChoComponent,
     DetailComponent,
+    DetailProductComponent,
     TrackingComponent,
     // Custom components
     CustomFooterComponent,

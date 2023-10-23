@@ -1,10 +1,5 @@
 <c-header class="customBody">
-  <app-custom-header
-    [icons]="true"
-    [select]="false"
-    [search]="false"
-    [ngStyle]="{ width: '100%' }"
-  >
+  <app-custom-header [icons]="true" [select]="false" [search]="false" [ngStyle]="{ width: '100%' }">
   </app-custom-header>
   <c-header-divider></c-header-divider>
   <c-container>
@@ -13,30 +8,17 @@
         <h3 [ngStyle]="{ 'text-align': 'center' }">Tracking</h3>
         <c-input-group class="mb-3">
           <label cInputGroupText for="CodeInput"> Code </label>
-          <input
-            [(ngModel)]="code"
-            class="customInput"
-            id="CodeInput"
-            aria-label="Code"
-            cFormControl
-            type="input"
-            placeholder="Please enter a tracking code..."
-          />
+          <input [(ngModel)]="code" class="customInput" id="CodeInput" aria-label="Code" cFormControl type="input"
+            placeholder="Please enter a tracking code..." />
           <div [ngStyle]="{ 'text-align': 'end', 'padding-left': '10px' }">
-            <button
-              (click)="getPurchaseByTrackingCode()"
-              cButton
-              color="primary">
+            <button (click)="getPurchaseByTrackingCode()" cButton color="primary">
               Track your purchase
               <svg cIcon name="cil-compass"></svg>
             </button>
           </div>
         </c-input-group>
 
-        <c-card
-          *ngIf="purchase !== undefined"
-          [cBorder]="{ top: { color: 'info', width: 3 } }"
-          class="mb-3">
+        <c-card *ngIf="purchase !== undefined" [cBorder]="{ top: { color: 'info', width: 3 } }" class="mb-3">
           <c-row class="g-0">
             <c-card-body cCol [md]="8">
               <p cCardText>
@@ -46,11 +28,7 @@
                 <b>Total:</b> {{ purchase.totalAmount | currency }}
               </p>
             </c-card-body>
-            <table
-              *ngIf="purchase !== undefined"
-              cTable
-              hover
-              [responsive]="true">
+            <table *ngIf="purchase !== undefined" cTable hover [responsive]="true">
               <thead>
                 <tr>
                   <th scope="col">Code</th>
@@ -63,14 +41,26 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  *ngFor="
-                    let item of purchase.details;
+                <tr *ngFor="
+                    let item of purchase.drugsDetails;
                     let indexOfelement = index">
                   <td>{{ item.code }}</td>
                   <td>{{ item.name }}</td>
                   <td>{{ item.quantity }}</td>
-                  <td>{{ item.price  | currency}}</td>
+                  <td>{{ item.price | currency}}</td>
+                  <td>{{ (item.price * item.quantity) | currency}}</td>
+                  <td>{{ item.pharmacyName }}</td>
+                  <td [ngStyle]="{ color: getColor(item.status) }">
+                    <b>{{ item.status }}</b>
+                  </td>
+                </tr>
+                <tr *ngFor="
+                    let item of purchase.productsDetails;
+                    let indexOfelement = index">
+                  <td>{{ item.code }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ item.price | currency}}</td>
                   <td>{{ (item.price * item.quantity) | currency}}</td>
                   <td>{{ item.pharmacyName }}</td>
                   <td [ngStyle]="{ color: getColor(item.status) }">
@@ -81,13 +71,8 @@
             </table>
           </c-row>
         </c-card>
-        <c-card
-          *ngIf="tracking !== undefined"
-          [cBorder]="{ top: { color: 'info', width: 3 } }"
-          class="mb-3">
-          <h6
-            *ngIf="tracking.length > 0"
-            [ngStyle]="{ 'text-align': 'center' }">
+        <c-card *ngIf="tracking !== undefined" [cBorder]="{ top: { color: 'info', width: 3 } }" class="mb-3">
+          <h6 *ngIf="tracking.length > 0" [ngStyle]="{ 'text-align': 'center' }">
             Last 5 tracked codes
           </h6>
           <c-row class="g-0">
