@@ -33,7 +33,7 @@ namespace SpecFlow.Specs.StepDefinitions
         [BeforeScenario]
         public void Setup()
         {
-            var connectionString = "Server=LAPTOP-KE22VQHH;Database=PharmaGoDb;Trusted_Connection=True; MultipleActiveResultSets=True";
+            var connectionString = "Server=localhost\\SQLEXPRESS;Database=PharmaGoDb;Trusted_Connection=True; MultipleActiveResultSets=True";
             var optionsBuilder = new DbContextOptionsBuilder<PharmacyGoDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
@@ -149,7 +149,7 @@ namespace SpecFlow.Specs.StepDefinitions
         [When(@"I request the product modification")]
         public void WhenIRequestTheProductModification()
         {
-            _response = _productController.ModifyProduct(_productId, _productModel);
+            _response = _productController.Modify(_productId, _productModel);
         }
 
         [Then(@"the system validates the new information")]
@@ -183,7 +183,7 @@ namespace SpecFlow.Specs.StepDefinitions
         {
             try
             {
-                _response = _productController.ModifyProduct(_productId, _productModel);
+                _response = _productController.Modify(_productId, _productModel);
             }
             catch (Exception e)
             {

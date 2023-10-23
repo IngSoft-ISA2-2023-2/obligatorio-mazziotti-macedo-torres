@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-    testRunner.Given("I am an authorized pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("I am a pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
     testRunner.And("I choose an existing product to modify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -174,10 +174,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 19
-    testRunner.Given("I am an authorized pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("I am a pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 20
-    testRunner.And("I choose a product to modify that doesn\'t exist in the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I choose a product to modify that does not exist in the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
     testRunner.And("I enter the new valid code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.When("I choose the option to modify a product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
-    testRunner.Then("the system informs me that the product doesn\'t exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("the system informs me that the product does not exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -204,7 +204,8 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.SkippableTheoryAttribute(DisplayName="Modifying product details with specific data")]
         [Xunit.TraitAttribute("FeatureTitle", "Modify Product Information")]
         [Xunit.TraitAttribute("Description", "Modifying product details with specific data")]
-        [Xunit.InlineDataAttribute("\'54321\'", "\'Valid Name\'", "\'Valid Description\'", "\'The product doesn\'t exist in that pharmacy.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'44444\'", "\'Valid Name\'", "\'Valid Description\'", "\'The new product code already exists in that pharmacy.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'1234A\'", "\'Valid Name\'", "\'Valid Description\'", "\'The product code is invalid.\'", new string[0])]
         [Xunit.InlineDataAttribute("\'12345\'", "\'Name that exceeds 30 charsssssssssss\'", "\'Valid Description\'", "\'The product name is too long.\'", new string[0])]
         [Xunit.InlineDataAttribute("\'12345\'", "\'Valid Name\'", "\'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss\'", "\'The product description is too long.\'", new string[0])]
         public virtual void ModifyingProductDetailsWithSpecificData(string code, string name, string description, string errorMessage, string[] exampleTags)
@@ -237,7 +238,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 29
-    testRunner.Given("I am an authorized pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("I am a pharmacy employee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 30
     testRunner.And("I choose an existing product to modify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -258,7 +259,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.When("I choose the option to modify a product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
-    testRunner.Then(string.Format("the system shows an error message indicating {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the system shows the error message {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

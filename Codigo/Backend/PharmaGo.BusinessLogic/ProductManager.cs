@@ -50,5 +50,31 @@ namespace PharmaGo.BusinessLogic
             _productRepository.Save();
             return product;
         }
+
+        public Product Update(int id, Product product)
+        {
+            if (product == null)
+                throw new InvalidResourceException("Mandatory information is missing.");
+
+            product.ValidOrFail();
+
+            Product productSaved = _productRepository.GetOneByExpression(p => p.Id == id);
+
+            if (productSaved == null)
+                throw new ResourceNotFoundException("The product does not exist.");
+
+            if (_productRepository.GetOneByExpression(p => p.Code == product.Code && p.Code != productSaved.Code && p.Pharmacy.Id == productSaved.Pharmacy.Id) != null)
+                throw new ResourceNotFoundException("The new product code already exists in that pharmacy.");
+
+            productSaved.Code = product.Code;
+            productSaved.Name = product.Name;
+            productSaved.Description = product.Description;
+            productSaved.Price = product.Price;
+
+            _productRepository.UpdateOne(productSaved);
+            _productRepository.Save();
+
+            return productSaved;
+        }
     }
 }

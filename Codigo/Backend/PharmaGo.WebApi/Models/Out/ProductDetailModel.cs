@@ -9,6 +9,7 @@ namespace PharmaGo.WebApi.Models.Out
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public int Quantity { get; set; } = 1;
         public PharmacyBasicModel Pharmacy { get; set; }
 
         public ProductDetailModel(Product product)

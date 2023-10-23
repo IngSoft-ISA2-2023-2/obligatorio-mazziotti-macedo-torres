@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PharmaGo.BusinessLogic;
 using PharmaGo.Domain.Entities;
 using PharmaGo.IBusinessLogic;
 using PharmaGo.WebApi.Enums;
@@ -28,6 +29,15 @@ namespace PharmaGo.WebApi.Controllers
             string token = HttpContext.Request.Headers["Authorization"];
             Product productCreated = _productManager.Create(productModel.ToEntity(), token);
             ProductDetailModel productResponse = new ProductDetailModel(productCreated);
+            return Ok(productResponse);
+        }
+
+        [HttpPut("{id}")]
+        [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
+        public IActionResult Modify([FromRoute] int id, [FromBody] ProductModel productModel)
+        {
+            Product productUpdated = _productManager.Update(id, productModel.ToEntity());
+            ProductDetailModel productResponse = new ProductDetailModel(productUpdated);
             return Ok(productResponse);
         }
     }
