@@ -6,6 +6,7 @@ import { PurchaseResponse } from '../../../interfaces/purchase';
 import { PurchaseService } from '../../../services/purchase.service';
 import { StorageManager } from '../../../utils/storage-manager';
 import { CommonService } from '../../../services/CommonService';
+import { Product } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-tracking',
@@ -17,7 +18,8 @@ export class TrackingComponent implements OnInit {
   purchase: PurchaseResponse | undefined;
   code: string = "";
   tracking: string[] = [];
-  cart: Drug[] = [];
+  cartDrugs: Drug[] = [];
+  cartProducts: Product[] = [];
 
   constructor(
     public iconSet: IconSetService,
@@ -60,11 +62,16 @@ export class TrackingComponent implements OnInit {
   }
 
   updateCart() : void{
-    this.cart = JSON.parse(this.storageManager.getData('cart'));
-    if (!this.cart) {
-      this.cart = [];
-      this.storageManager.saveData('cart', JSON.stringify(this.cart));
+    this.cartDrugs = JSON.parse(this.storageManager.getData('cartDrugs'));
+    this.cartProducts = JSON.parse(this.storageManager.getData('cartProducts'));
+    if (!this.cartDrugs) {
+      this.cartDrugs = [];
+      this.storageManager.saveData('cartDrugs', JSON.stringify(this.cartDrugs));
     }
-    this.commonService.updateHeaderData(this.cart.length);
+    if (!this.cartProducts) {
+      this.cartProducts = [];
+      this.storageManager.saveData('cartProducts', JSON.stringify(this.cartProducts));
+    }
+    this.commonService.updateHeaderData(this.cartDrugs.length + this.cartProducts.length);
   }
 }

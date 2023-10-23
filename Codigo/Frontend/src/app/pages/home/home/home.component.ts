@@ -16,7 +16,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomeComponent implements OnInit {
   drugs: Drug[] = [];
   products: Product[] = [];
-  cart: Drug[] = [];
+  cartDrugs: Drug[] = [];
+  cartProducts: Product[] = [];
 
   constructor(
     public iconSet: IconSetService,
@@ -36,10 +37,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.updateCart();
+    this.updateCartDrugs();
+    this.updateCartProducts();
     this.getDrugs();
     this.getProducts();
-    this.storageManager.saveData('total', JSON.stringify(0));
+    this.storageManager.saveData('totalDrugs', JSON.stringify(0));
+    this.storageManager.saveData('totalProducts', JSON.stringify(0));
   }
 
   getDrugs(): void {
@@ -52,12 +55,21 @@ export class HomeComponent implements OnInit {
       .subscribe(products => this.products = products);
   }
 
-  updateCart(): void {
-    this.cart = JSON.parse(this.storageManager.getData('cart'));
-    if (!this.cart) {
-      this.cart = [];
-      this.storageManager.saveData('cart', JSON.stringify(this.cart));
+  updateCartDrugs(): void {
+    this.cartDrugs = JSON.parse(this.storageManager.getData('cartDrugs'));
+    if (!this.cartDrugs) {
+      this.cartDrugs = [];
+      this.storageManager.saveData('cartDrugs', JSON.stringify(this.cartDrugs));
     }
-    this.commonService.updateHeaderData(this.cart.length);
+    this.commonService.updateHeaderData(this.cartDrugs.length);
+  }
+
+  updateCartProducts(): void {
+    this.cartProducts = JSON.parse(this.storageManager.getData('cartProducts'));
+    if (!this.cartProducts) {
+      this.cartProducts = [];
+      this.storageManager.saveData('cartProducts', JSON.stringify(this.cartProducts));
+    }
+    this.commonService.updateHeaderData(this.cartProducts.length);
   }
 }

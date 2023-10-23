@@ -31,7 +31,7 @@ export class DetailProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProduct();
-    this.storageManager.saveData('total', JSON.stringify(0));
+    this.storageManager.saveData('totalProducts', JSON.stringify(0));
   }
 
   getProduct(): void {

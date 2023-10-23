@@ -31,7 +31,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDrug();
-    this.storageManager.saveData('total', JSON.stringify(0));
+    this.storageManager.saveData('totalDrugs', JSON.stringify(0));
   }
 
   getDrug(): void {
@@ -41,10 +41,10 @@ export class DetailComponent implements OnInit {
 
   addToCart(drug: Drug) {
     if (drug) {
-      this.cart = JSON.parse(this.storageManager.getData('cart'));
+      this.cart = JSON.parse(this.storageManager.getData('cartDrugs'));
       if (!this.cart) {
         this.cart = [];
-        this.storageManager.saveData('cart', JSON.stringify(this.cart));
+        this.storageManager.saveData('cartDrugs', JSON.stringify(this.cart));
       }
       
       let exist: boolean = false;
@@ -59,7 +59,7 @@ export class DetailComponent implements OnInit {
         drug.quantity = this.quantity;
         this.cart.push(drug);
       }
-      this.storageManager.saveData('cart', JSON.stringify(this.cart));
+      this.storageManager.saveData('cartDrugs', JSON.stringify(this.cart));
     }
     this.updateHeader(this.cart.length);
     this.router.navigate(['/home/cart']);
