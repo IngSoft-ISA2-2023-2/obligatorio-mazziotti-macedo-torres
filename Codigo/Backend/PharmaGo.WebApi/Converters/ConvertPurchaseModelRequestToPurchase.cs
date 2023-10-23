@@ -14,9 +14,9 @@ namespace PharmaGo.WebApi.Converters
             purchase.BuyerEmail = model.BuyerEmail;
             purchase.details = new List<PurchaseDetail>();
             purchase.ProductDetails =  new List<PurchaseProductDetail>();
-            if (model.Details != null)
+            if (model.DrugsDetails != null)
             {
-                foreach (var detail in model.Details)
+                foreach (var detail in model.DrugsDetails)
                 {
                     purchase.details
                         .Add(new PurchaseDetail
@@ -30,9 +30,9 @@ namespace PharmaGo.WebApi.Converters
                         });
                 }
             }
-            if (model.ProductDetails != null)
+            if (model.ProductsDetails != null)
             {
-                foreach (var productDetail in model.ProductDetails)
+                foreach (var productDetail in model.ProductsDetails)
                 {
                     purchase.ProductDetails
                         .Add(new PurchaseProductDetail

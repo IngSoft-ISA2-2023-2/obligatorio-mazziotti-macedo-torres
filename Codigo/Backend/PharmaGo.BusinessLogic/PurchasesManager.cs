@@ -111,9 +111,16 @@ namespace PharmaGo.BusinessLogic
                     if (productDetail.Quantity <= 0)
                         throw new InvalidResourceException("The Quantity is a mandatory field");
 
+                    string productCode = productDetail.Product.Code;
+                    var product = _productRepository.GetOneByExpression(x => x.Code == productCode && x.Pharmacy.Id == pharmacyId && !x.Deleted);
+
+                    if (product is null)
+                        throw new ResourceNotFoundException($"Product {productCode} not found in Pharmacy {pharmacy.Name}");
+
                     productDetail.Pharmacy = pharmacy;
                     total = total + (productDetail.Price * productDetail.Quantity);
-                    //Check this lines if there are problems calculating the price
+                    productDetail.Price = product.Price;
+                    productDetail.Product = product;
                     productDetail.Status = PENDING;
                 }
             }

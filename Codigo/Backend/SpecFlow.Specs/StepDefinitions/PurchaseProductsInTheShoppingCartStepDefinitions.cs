@@ -84,11 +84,11 @@ namespace SpecFlow.Specs.StepDefinitions
             {
                 BuyerEmail = "testTest@test.com",
                 PurchaseDate = DateTime.Now,
-                Details = new List<PurchaseDetailModelRequest>(),
-                ProductDetails = new List<PurchaseProductDetailModelRequest>()
+                DrugsDetails = new List<PurchaseDetailModelRequest>(),
+                ProductsDetails = new List<PurchaseProductDetailModelRequest>()
             };
 
-            _purchaseModel.ProductDetails.Add(_purchaseProductDetail);
+            _purchaseModel.ProductsDetails.Add(_purchaseProductDetail);
         }
 
         [When(@"I proceed to checkout and confirm the purchase")]
@@ -130,7 +130,7 @@ namespace SpecFlow.Specs.StepDefinitions
             {
                 BuyerEmail = "a@a.com",
                 PurchaseDate = DateTime.Now,
-                Details = new List<PurchaseDetailModelRequest>() {}
+                DrugsDetails = new List<PurchaseDetailModelRequest>() {}
             };
         }
 
