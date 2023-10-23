@@ -77,7 +77,7 @@ namespace SpecFlow.Specs.StepDefinitions
             _purchaseProductDetail = new PurchaseProductDetailModelRequest()
             {
                 PharmacyId = 1,
-                Code = "66666",
+                Code = "77777",
                 Quantity = 1
             };
             _purchaseModel = new PurchaseModelRequest()

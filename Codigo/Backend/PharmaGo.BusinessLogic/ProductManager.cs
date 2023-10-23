@@ -30,7 +30,7 @@ namespace PharmaGo.BusinessLogic
 
         public IEnumerable<Product> GetAll()
         {
-            return _productRepository.GetAllByExpression(t => true);
+            return _productRepository.GetAllByExpression(p => !p.Deleted);
         }
 
         public Product GetById(int id)
