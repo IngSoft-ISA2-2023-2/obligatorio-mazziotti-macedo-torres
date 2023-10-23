@@ -11,7 +11,7 @@ namespace PharmaGo.WebApi.Models.Out
         public string TrackingCode { get; set; }
         public decimal TotalAmount { get; set; }
         public ICollection<PurchaseDetailModelResponseDuplicated>? Details { get; set; }
-        public ICollection<PurchaseProductDetailModelResponseDuplicated> ProductDetails { get; set; }
+        public ICollection<PurchaseProductDetailModelResponseDuplicated>? ProductDetails { get; set; }
 
         public class PurchaseDetailModelResponseDuplicated
         {
@@ -45,6 +45,8 @@ namespace PharmaGo.WebApi.Models.Out
             PurchaseDate = purchase.PurchaseDate;
             TrackingCode = purchase.TrackingCode;
             Details = new List<PurchaseDetailModelResponseDuplicated>();
+            ProductDetails = new List<PurchaseProductDetailModelResponseDuplicated>();
+
             if (purchase.details != null) {
                 foreach (var detail in purchase.details) {
                     Details.Add(new PurchaseDetailModelResponseDuplicated {

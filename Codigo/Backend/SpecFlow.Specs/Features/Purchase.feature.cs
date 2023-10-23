@@ -164,15 +164,12 @@ namespace SpecFlow.Specs.Features
     testRunner.And("I have no products in my shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-    testRunner.And("I have provided my payment and shipping information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
     testRunner.When("I proceed to checkout and confirm the purchase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 18
     testRunner.Then("the system should display an error message indicating that the cart is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 20
+#line 19
     testRunner.And("I should not be able to complete the purchase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

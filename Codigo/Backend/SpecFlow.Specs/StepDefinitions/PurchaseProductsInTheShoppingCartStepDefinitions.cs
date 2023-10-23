@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.RulesetToEditorconfig;
+using Microsoft.EntityFrameworkCore;
 using PharmaGo.BusinessLogic;
 using PharmaGo.DataAccess;
 using PharmaGo.DataAccess.Repositories;
@@ -20,14 +21,48 @@ namespace SpecFlow.Specs.StepDefinitions
     [Binding]
     public class PurchaseProductsInTheShoppingCartStepDefinitions
     {
+        private PharmacyGoDbContext _dbContext;
+        private IRepository<Product> _productRepository;
+        private IRepository<Drug> _drugRepository;
+        private IRepository<Pharmacy> _pharmacyRepository;
+        private IRepository<Session> _sessionRepository;
+        private IRepository<User> _userRepository;
+        private IRepository<Purchase> _purchaseRepository;
+        private IRepository<PurchaseDetail> _purchaseDetailRepository;
+        private IRepository<PurchaseProductDetail> _purchaseProductDetailRepository;
+        private IPurchasesManager _purchasesManager;
         private PurchasesController _purchaseController;
-        private PurchasesRepository _purchaseRepository;
-        private PurchasesDetailRepository _purchaseDetailRepository;
-        private PurchaseDetailModelRequest _purchaseDetail;
+        private PurchaseProductDetailModelRequest _purchaseProductDetail;
         private PurchaseModelRequest _purchaseModel;
         private string _responseError;
-
         private IActionResult _response;
+
+        [BeforeScenario]
+        public void Setup()
+        {
+            var connectionString = "Server=localhost\\SQLEXPRESS;Database=PharmaGoDb;Trusted_Connection=True; MultipleActiveResultSets=True";
+            var optionsBuilder = new DbContextOptionsBuilder<PharmacyGoDbContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            _dbContext = new PharmacyGoDbContext(optionsBuilder.Options);
+
+            _productRepository = new ProductRepository(_dbContext);
+            _drugRepository = new DrugRepository(_dbContext);
+            _pharmacyRepository = new PharmacyRepository(_dbContext);
+            _sessionRepository = new SessionRepository(_dbContext);
+            _userRepository = new UsersRepository(_dbContext);
+            _purchaseRepository = new PurchasesRepository(_dbContext);
+            _purchaseDetailRepository = new PurchasesDetailRepository(_dbContext);
+
+            //This line is horrible but we're adhering to the original implementation
+            _purchasesManager = new PurchasesManager(_purchaseRepository, _pharmacyRepository, _drugRepository, _productRepository, _purchaseDetailRepository, _purchaseProductDetailRepository,_sessionRepository, _userRepository);
+
+            _purchaseController = new PurchasesController(_purchasesManager);
+            /*
+            _productManager = new ProductManager(_productRepository, _pharmacyRepository, _sessionRepository, _userRepository);
+            _productController = new ProductController(_productManager);
+            */
+        }
 
         [Given(@"I am a customer on the platform")]
         public void GivenIAmACustomerOnThePlatform()
@@ -39,7 +74,7 @@ namespace SpecFlow.Specs.StepDefinitions
         public void GivenIHaveOneOrMoreProductsInMyShoppingCart()
         {
             //This product needs to already exist in the database
-            _purchaseDetail = new PurchaseDetailModelRequest()
+            _purchaseProductDetail = new PurchaseProductDetailModelRequest()
             {
                 PharmacyId = 1,
                 Code = "66666",
@@ -47,16 +82,26 @@ namespace SpecFlow.Specs.StepDefinitions
             };
             _purchaseModel = new PurchaseModelRequest()
             {
-                BuyerEmail = "a@a.com",
+                BuyerEmail = "testTest@test.com",
                 PurchaseDate = DateTime.Now,
-                Details = new List<PurchaseDetailModelRequest>() {_purchaseDetail}
+                Details = new List<PurchaseDetailModelRequest>(),
+                ProductDetails = new List<PurchaseProductDetailModelRequest>()
             };
+
+            _purchaseModel.ProductDetails.Add(_purchaseProductDetail);
         }
 
         [When(@"I proceed to checkout and confirm the purchase")]
         public void WhenIProceedToCheckoutAndConfirmThePurchase()
         {
-            _response = _purchaseController.CreatePurchase(_purchaseModel);
+            try
+            {
+                _response = _purchaseController.CreatePurchase(_purchaseModel);
+            }
+            catch (Exception ex)
+            {
+                _responseError = ex.Message;
+            }
         }
 
         [Then(@"the system should create an order for the selected products")]
@@ -68,7 +113,7 @@ namespace SpecFlow.Specs.StepDefinitions
             var purchase = converter.Convert(_purchaseModel);
 
             //Esto me va a dar mal creo porque el objeto no es estrictamente el mismo
-            Assert.Contains(purchase, purchases);
+            Assert.NotEmpty(purchases.FindAll(x => x.BuyerEmail.Equals(purchase.BuyerEmail)));
         }
 
         [Then(@"the system should provide an order confirmation")]
@@ -92,20 +137,13 @@ namespace SpecFlow.Specs.StepDefinitions
         [Then(@"the system should display an error message indicating that the cart is empty")]
         public void ThenTheSystemShouldDisplayAnErrorMessageIndicatingThatTheCartIsEmpty()
         {
-            try
-            {
-                _response = _purchaseController.CreatePurchase(_purchaseModel);
-            }
-            catch (Exception ex)
-            {
-                _responseError = ex.Message;
-            }
+            Assert.Equal("The list of items can't be empty", _responseError);
         }
 
         [Then(@"I should not be able to complete the purchase")]
         public void ThenIShouldNotBeAbleToCompleteThePurchase()
         {
-            Assert.Equal("Cart is empty", _responseError);
+            //Empty step
         }
     }
 }

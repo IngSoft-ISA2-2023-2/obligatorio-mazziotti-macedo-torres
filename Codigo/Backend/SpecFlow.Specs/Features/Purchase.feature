@@ -14,7 +14,6 @@
   Scenario: Empty Cart During Checkout
     Given I am a customer on the platform
     And I have no products in my shopping cart
-    And I have provided my payment and shipping information
     When I proceed to checkout and confirm the purchase
     Then the system should display an error message indicating that the cart is empty
     And I should not be able to complete the purchase

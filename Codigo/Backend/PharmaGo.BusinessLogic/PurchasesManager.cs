@@ -69,47 +69,53 @@ namespace PharmaGo.BusinessLogic
                 throw new InvalidResourceException("The purchase date is a mandatory field");
 
             decimal total = 0;
-            foreach (var detail in purchase.details)
+            if (purchase.details != null)
             {
-                int pharmacyId = detail.Pharmacy.Id;
-                if (pharmacyId <= 0)
-                    throw new ResourceNotFoundException($"Pharmacy Id is a mandatory field");
+                foreach (var detail in purchase.details)
+                {
+                    int pharmacyId = detail.Pharmacy.Id;
+                    if (pharmacyId <= 0)
+                        throw new ResourceNotFoundException($"Pharmacy Id is a mandatory field");
 
-                var pharmacy = _pharmacysRepository.GetOneByExpression(x => x.Id == pharmacyId);
-                if (pharmacy is null)
-                    throw new ResourceNotFoundException($"Pharmacy {detail.Pharmacy.Id} not found");
+                    var pharmacy = _pharmacysRepository.GetOneByExpression(x => x.Id == pharmacyId);
+                    if (pharmacy is null)
+                        throw new ResourceNotFoundException($"Pharmacy {detail.Pharmacy.Id} not found");
 
-                if (detail.Quantity <= 0)
-                    throw new InvalidResourceException("The Quantity is a mandatory field");
+                    if (detail.Quantity <= 0)
+                        throw new InvalidResourceException("The Quantity is a mandatory field");
 
-                string drugCode = detail.Drug.Code;
-                var drug = pharmacy.Drugs.FirstOrDefault(x => x.Code == drugCode && x.Deleted == false);
-                if (drug is null)
-                    throw new ResourceNotFoundException($"Drug {drugCode} not found in Pharmacy {pharmacy.Name}");
+                    string drugCode = detail.Drug.Code;
+                    var drug = pharmacy.Drugs.FirstOrDefault(x => x.Code == drugCode && x.Deleted == false);
+                    if (drug is null)
+                        throw new ResourceNotFoundException($"Drug {drugCode} not found in Pharmacy {pharmacy.Name}");
 
-                detail.Pharmacy = pharmacy;
-                total = total + (drug.Price * detail.Quantity);
-                detail.Price = drug.Price;
-                detail.Drug = drug;
-                detail.Status = PENDING;
+                    detail.Pharmacy = pharmacy;
+                    total = total + (drug.Price * detail.Quantity);
+                    detail.Price = drug.Price;
+                    detail.Drug = drug;
+                    detail.Status = PENDING;
+                }
             }
-            foreach (var productDetail in purchase.ProductDetails)
+            if (purchase.ProductDetails != null)
             {
-                int pharmacyId = productDetail.Pharmacy.Id;
-                if (pharmacyId <= 0)
-                    throw new ResourceNotFoundException($"Pharmacy Id is a mandatory field");
+                foreach (var productDetail in purchase.ProductDetails)
+                {
+                    int pharmacyId = productDetail.Pharmacy.Id;
+                    if (pharmacyId <= 0)
+                        throw new ResourceNotFoundException($"Pharmacy Id is a mandatory field");
 
-                var pharmacy = _pharmacysRepository.GetOneByExpression(x => x.Id == pharmacyId);
-                if (pharmacy is null)
-                    throw new ResourceNotFoundException($"Pharmacy {productDetail.Pharmacy.Id} not found");
+                    var pharmacy = _pharmacysRepository.GetOneByExpression(x => x.Id == pharmacyId);
+                    if (pharmacy is null)
+                        throw new ResourceNotFoundException($"Pharmacy {productDetail.Pharmacy.Id} not found");
 
-                if (productDetail.Quantity <= 0)
-                    throw new InvalidResourceException("The Quantity is a mandatory field");
+                    if (productDetail.Quantity <= 0)
+                        throw new InvalidResourceException("The Quantity is a mandatory field");
 
-                productDetail.Pharmacy = pharmacy;
-                total = total + (productDetail.Price * productDetail.Quantity);
-                //Check this lines if there are problems calculating the price
-                productDetail.Status = PENDING;
+                    productDetail.Pharmacy = pharmacy;
+                    total = total + (productDetail.Price * productDetail.Quantity);
+                    //Check this lines if there are problems calculating the price
+                    productDetail.Status = PENDING;
+                }
             }
             purchase.TotalAmount = total;
             purchase.TrackingCode = generateTrackingCode();
