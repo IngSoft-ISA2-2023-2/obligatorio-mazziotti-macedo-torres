@@ -50,11 +50,11 @@ namespace SpecFlow.Specs.StepDefinitions
 
             _productModel = new ProductModel();
 
-            if (_productRepository.GetAllByExpression(p => p.Code == "12345").Count() == 0)
+            if (_productRepository.GetAllByExpression(p => p.Code == "12222").Count() == 0)
             {
                 Product product = new Product()
                 {
-                    Code = "12345",
+                    Code = "12222",
                     Name = "Name",
                     Description = "Description",
                     Price = 10.5M,
@@ -80,12 +80,15 @@ namespace SpecFlow.Specs.StepDefinitions
                 _productRepository.Save();
             }
 
-            List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "54321").ToList();
+            List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "22221").ToList();
 
-            if (products.Count() == 1)
+            if (products.Count() >= 1)
             {
-                _productRepository.DeleteOne(products[0]);
-                _productRepository.Save();
+                foreach (Product product in products)
+                {
+                    _productRepository.DeleteOne(product);
+                    _productRepository.Save();
+                }
             }
         }
 
@@ -191,7 +194,7 @@ namespace SpecFlow.Specs.StepDefinitions
             }
         }
 
-        [Then(@"the system informs me that the product does not exist")]
+        [Then(@"the system informs that the product does not exist")]
         public void ThenTheSystemInformsMeThatTheProductDoesNotExist()
         {
             Assert.Equal("The product does not exist.", _responseError);
@@ -224,15 +227,15 @@ namespace SpecFlow.Specs.StepDefinitions
         [AfterScenario]
         public void AfterScenario()
         {
-            if (_productRepository.GetAllByExpression(p => p.Code == "12345").Count() == 1)
+            if (_productRepository.GetAllByExpression(p => p.Code == "12222").Count() == 1)
             {
-                _productRepository.DeleteOne(_productRepository.GetAllByExpression(p => p.Code == "12345").FirstOrDefault());
+                _productRepository.DeleteOne(_productRepository.GetAllByExpression(p => p.Code == "12222").FirstOrDefault());
                 _productRepository.Save();
             }
 
-            if (_productRepository.GetAllByExpression(p => p.Code == "54321").Count() == 1)
+            if (_productRepository.GetAllByExpression(p => p.Code == "22221").Count() == 1)
             {
-                _productRepository.DeleteOne(_productRepository.GetAllByExpression(p => p.Code == "12345").FirstOrDefault());
+                _productRepository.DeleteOne(_productRepository.GetAllByExpression(p => p.Code == "22221").FirstOrDefault());
                 _productRepository.Save();
             }
 

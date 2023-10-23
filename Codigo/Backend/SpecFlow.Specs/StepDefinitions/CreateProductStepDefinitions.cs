@@ -66,10 +66,13 @@ namespace SpecFlow.Specs.StepDefinitions
 
             List<Product> products = _productRepository.GetAllByExpression(p => p.Code == "12345").ToList();
 
-            if (products.Count() == 1)
+            if (products.Count() >= 1)
             {
-                _productRepository.DeleteOne(products[0]);
-                _productRepository.Save();
+                foreach (Product product in products)
+                {
+                    _productRepository.DeleteOne(product);
+                    _productRepository.Save();
+                }
             }
         }
 

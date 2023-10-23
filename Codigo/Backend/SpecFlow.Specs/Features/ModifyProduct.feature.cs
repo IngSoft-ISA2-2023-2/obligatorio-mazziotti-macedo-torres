@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.When("I choose the option to modify a product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
-    testRunner.Then("the system informs me that the product does not exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("the system informs that the product does not exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -206,8 +206,8 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("Description", "Modifying product details with specific data")]
         [Xunit.InlineDataAttribute("\'44444\'", "\'Valid Name\'", "\'Valid Description\'", "\'The new product code already exists in that pharmacy.\'", new string[0])]
         [Xunit.InlineDataAttribute("\'1234A\'", "\'Valid Name\'", "\'Valid Description\'", "\'The product code is invalid.\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'12345\'", "\'Name that exceeds 30 charsssssssssss\'", "\'Valid Description\'", "\'The product name is too long.\'", new string[0])]
-        [Xunit.InlineDataAttribute("\'12345\'", "\'Valid Name\'", "\'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss\'", "\'The product description is too long.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'12222\'", "\'Name that exceeds 30 charsssssssssss\'", "\'Valid Description\'", "\'The product name is too long.\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'12222\'", "\'Valid Name\'", "\'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss\'", "\'The product description is too long.\'", new string[0])]
         public virtual void ModifyingProductDetailsWithSpecificData(string code, string name, string description, string errorMessage, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

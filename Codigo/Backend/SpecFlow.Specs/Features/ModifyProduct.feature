@@ -23,7 +23,7 @@ Scenario: Attempt to Modify a Non-existent Product
     And I enter the new valid description
     And I enter the new valid price
     When I choose the option to modify a product
-    Then the system informs me that the product does not exist
+    Then the system informs that the product does not exist
 
 Scenario Outline: Modifying product details with specific data
     Given I am a pharmacy employee
@@ -39,5 +39,5 @@ Scenario Outline: Modifying product details with specific data
     | code          | name                                     | description                                                                 | errorMessage                                               |
     | '44444'       | 'Valid Name'                             | 'Valid Description'                                                         | 'The new product code already exists in that pharmacy.'    |
     | '1234A'       | 'Valid Name'                             | 'Valid Description'                                                         | 'The product code is invalid.'                             |
-    | '12345'       | 'Name that exceeds 30 charsssssssssss'   | 'Valid Description'                                                         | 'The product name is too long.'                            |
-    | '12345'       | 'Valid Name'                             | 'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss'  | 'The product description is too long.'                     |
+    | '12222'       | 'Name that exceeds 30 charsssssssssss'   | 'Valid Description'                                                         | 'The product name is too long.'                            |
+    | '12222'       | 'Valid Name'                             | 'Description that exceeds 70 charssssssssssssssssssssssssssssssssssssssss'  | 'The product description is too long.'                     |
