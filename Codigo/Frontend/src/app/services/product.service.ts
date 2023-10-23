@@ -103,6 +103,16 @@ export class ProductService {
                 catchError(this.handleError<any>('Edit Product'))
             );
     }
+    
+    /** DELETE Delete Product */
+    deleteProduct(id: number): Observable<any> {
+        const url = `${this.url}/${id}`;
+        return this.http.delete<any>(url, { headers: this.getHttpHeaders() })
+            .pipe(
+                tap(),
+                catchError(this.handleError<any>('Delete Product'))
+            );
+    }
 
     /**
      * Handle Http operation that failed.

@@ -19,6 +19,7 @@ namespace PharmaGo.Domain.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Pharmacy? Pharmacy { get; set; }
+        public bool Deleted { get; set; }
 
         public void ValidOrFail()
         {

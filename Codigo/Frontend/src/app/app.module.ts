@@ -58,6 +58,8 @@ import { DeleteDrugComponent } from './pages/employee/delete-drug/delete-drug.co
 import { ExportDrugsComponent } from './pages/employee/export-drugs/export-drugs.component';
 import { EditProductListComponent } from './pages/employee/edit-product-list/edit-product-list.component';
 import { EditProductComponent } from './pages/employee/edit-product/edit-product.component';
+import { CreateProductComponent } from './pages/employee/create-product/create-product.component';
+import { DeleteProductComponent } from './pages/employee/delete-product/delete-product.component';
 
 // Login & Register
 import { LoginComponent } from './pages/login/login.component';
@@ -79,7 +81,6 @@ import { PurchaseByDateComponent } from './pages/owner/purchase-by-date/purchase
 // Owner
 import { InvitationComponent } from './pages/owner/invitation/invitation.component';
 import { StockRequestOwnerComponent } from './pages/owner/stock-request-owner/stock-request-owner.component';
-import { CreateProductComponent } from './pages/employee/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import { CreateProductComponent } from './pages/employee/create-product/create-p
     CreateProductComponent,
     EditProductListComponent,
     EditProductComponent,
+    DeleteProductComponent,
     // Owner
     OwnerComponent,
     PurchaseByDateComponent,

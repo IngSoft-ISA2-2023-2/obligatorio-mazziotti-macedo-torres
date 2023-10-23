@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using PharmaGo.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace PharmaGo.IDataAccess
 {

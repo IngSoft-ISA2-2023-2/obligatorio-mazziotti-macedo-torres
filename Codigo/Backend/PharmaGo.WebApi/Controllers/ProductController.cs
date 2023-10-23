@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmaGo.BusinessLogic;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using PharmaGo.Domain.Entities;
 using PharmaGo.IBusinessLogic;
 using PharmaGo.WebApi.Enums;
@@ -22,6 +23,32 @@ namespace PharmaGo.WebApi.Controllers
             _productManager = manager;
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            IEnumerable<Product> products = _productManager.GetAll();
+            IEnumerable<ProductDetailModel> productsToReturn = products.Select(d => new ProductDetailModel(d));
+            return Ok(productsToReturn);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
+        public IActionResult User()
+        {
+            string token = HttpContext.Request.Headers["Authorization"];
+            IEnumerable<Product> products = _productManager.GetAllByUser(token);
+            IEnumerable<ProductDetailModel> productToReturn = products.Select(p => new ProductDetailModel(p));
+            return Ok(productToReturn);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById([FromRoute] int id)
+        {
+            Product product = _productManager.GetById(id);
+            return Ok(new ProductDetailModel(product));
+        }
+
         [HttpPost]
         [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
         public IActionResult Create([FromBody] ProductModel productModel)
@@ -39,6 +66,15 @@ namespace PharmaGo.WebApi.Controllers
             Product productUpdated = _productManager.Update(id, productModel.ToEntity());
             ProductDetailModel productResponse = new ProductDetailModel(productUpdated);
             return Ok(productResponse);
+        }
+        
+        [HttpDelete("{id}")]
+        [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
+        public IActionResult Delete([FromRoute] int id)
+        {
+            string token = HttpContext.Request.Headers["Authorization"];
+            _productManager.Delete(id);
+            return Ok(200);
         }
     }
 }

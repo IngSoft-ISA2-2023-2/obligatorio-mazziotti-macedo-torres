@@ -28,6 +28,21 @@ namespace PharmaGo.BusinessLogic
             _userRepository = userRepository;
         }
 
+        public IEnumerable<Product> GetAll()
+        {
+            return _productRepository.GetAllByExpression(t => true);
+        }
+
+        public Product GetById(int id)
+        {
+            Product retrievedProduct = _productRepository.GetOneByExpression(p => p.Id == id);
+            if (retrievedProduct == null)
+            {
+                throw new ResourceNotFoundException("The drug does not exist.");
+            }
+
+            return retrievedProduct;
+        }
 
         public Product Create(Product product, string token)
         {
@@ -75,6 +90,28 @@ namespace PharmaGo.BusinessLogic
             _productRepository.Save();
 
             return productSaved;
+        }
+        
+        public void Delete(int id)
+        {
+            var productSaved = _productRepository.GetOneByExpression(d => d.Id == id);
+            if (productSaved == null)
+            {
+                throw new ResourceNotFoundException("The drug to delete does not exist.");
+            }
+            productSaved.Deleted = true;
+            _productRepository.UpdateOne(productSaved);
+            _productRepository.Save();
+        }
+
+        public IEnumerable<Product> GetAllByUser(string token)
+        {
+            var guidToken = new Guid(token);
+            Session session = _sessionRepository.GetOneByExpression(s => s.Token == guidToken);
+            var userId = session.UserId;
+            User user = _userRepository.GetOneDetailByExpression(u => u.Id == userId);
+            Pharmacy pharmacy = user.Pharmacy;
+            return _productRepository.GetAllByExpression(d => d.Deleted == false && d.Pharmacy.Id == pharmacy.Id);
         }
     }
 }
