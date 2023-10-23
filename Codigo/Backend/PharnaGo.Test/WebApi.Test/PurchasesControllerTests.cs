@@ -278,7 +278,7 @@ namespace PharmaGo.Test.WebApi.Test
             purchaseDetail.ElementAt(0).Status = "Approved";
 
             _purchasesManagerMock
-                .Setup(service => service.ApprobePurchaseDetail(1, model.pharmacyId, model.drugCode))
+                .Setup(service => service.ApprovePurchaseDetail(1, model.pharmacyId, model.drugCode))
                 .Returns(purchaseDetail.ElementAt(0));
 
             //Act

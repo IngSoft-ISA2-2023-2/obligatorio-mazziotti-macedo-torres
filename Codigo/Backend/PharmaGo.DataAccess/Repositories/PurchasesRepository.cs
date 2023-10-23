@@ -50,5 +50,6 @@ namespace PharmaGo.DataAccess.Repositories
                 .Include(x => x.details).ThenInclude(d => d.Pharmacy)
                 .FirstOrDefault(expression);
         }
+        //I may have to copy the avobe class for ProductDetails
     }
 }
