@@ -44,3 +44,5 @@ Las horas dedicadas a las user stories se dividieron de la siguiente manera:
 ![Esfuerzo US #57](../Imágenes/Esfuerzo%20US%2057.png)
 
 Para ver los nombres de las tareas realizadas en cada categoría, y sus autores, se puede acceder al siguiente [link](https://app.clockify.me/shared/6537296c9cae90478a4d3ce9).
+
+Fueron un total de 52:32 horas persona.
