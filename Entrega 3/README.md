@@ -15,7 +15,9 @@ Después de la planificación, hicimos una revisión detallada de todas las cere
 
 Fiorella se encargó de la definición inicial de los escenarios para cada historia de usuario, asegurando que estuvieran alineados con los objetivos del proyecto. Posteriormente, trabajó en el diseño y desarrollo del frontend para las cuatro nuevas funcionalidades (alta, baja, modificación y compra de productos).
 
-Por otro lado, Nicolás y Matías se sumergieron en el universo de SpecFlow, creando tests detallados y robustos para garantizar la calidad y fiabilidad de nuestras funcionalidades. Luego, se dividieron las responsabilidades del backend y del testing de integración entre ellos, con Nicolás enfocándose en la creación y modificación de compra de productos, y Matías en el borrado y compra de productos. Puedes revisar más detalles sobre las pruebas con SpecFlow en este [enlace]().
+Por otro lado, Nicolás y Matías se sumergieron en el universo de SpecFlow, creando tests detallados y robustos para garantizar la calidad y fiabilidad de nuestras funcionalidades. Luego, se dividieron las responsabilidades del backend y del testing de integración entre ellos, con Nicolás enfocándose en la creación y modificación de compra de productos, y Matías en el borrado y compra de productos. 
+
+Puedes revisar más detalles sobre las pruebas este [enlace](./Documentación/Evidencia%20de%20Ejecución%20de%20los%20Tests.md).
 
 ## Revisión y Feedback
 
