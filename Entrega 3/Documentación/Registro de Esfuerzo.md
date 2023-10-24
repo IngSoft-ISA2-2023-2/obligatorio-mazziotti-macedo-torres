@@ -19,10 +19,30 @@ En el caso de los meetings, en los que participa más de un integrante, cada int
 
 A continuación el registro de esfuerzo dividido según las categorías ya mencionadas:
 
-![Esfuerzo por categoria](TODO)
+![Esfuerzo por categoria](../Imágenes/Esfuerzo%20por%20Categoria.png)
 
 Las horas realizadas según integrante:
 
-![Horas por integrante](TODO)
+![Esfuerzo por integrante](../Imágenes/Esfuerzo%20por%20Integrante.png)
 
-Para ver los nombres de las tareas realizadas en cada categoría, y sus autores, se puede acceder al siguiente [link](TODO).
+Las horas dedicadas a las user stories se dividieron de la siguiente manera:
+
+* US #54:
+
+![Esfuerzo US #54](../Imágenes/Esfuerzo%20US%2054.png)
+
+* US #55:
+
+![Esfuerzo US #55](../Imágenes/Esfuerzo%20US%2055.png)
+
+* US #56:
+
+![Esfuerzo US #56](../Imágenes/Esfuerzo%20US%2056.png)
+
+* US #57:
+
+![Esfuerzo US #57](../Imágenes/Esfuerzo%20US%2057.png)
+
+Para ver los nombres de las tareas realizadas en cada categoría, y sus autores, se puede acceder al siguiente [link](https://app.clockify.me/shared/6537296c9cae90478a4d3ce9).
+
+Fueron un total de 52:32 horas persona.
