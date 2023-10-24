@@ -22,15 +22,15 @@ Puedes revisar más detalles sobre las pruebas este [enlace](./Documentación/Ev
 ## Revisión y Feedback
 
 Revisión y Feedback
-Al finalizar nuestra etapa de desarrollo, llevamos a cabo una sesión de review donde presentamos nuestro trabajo, las funcionalidades implementadas y los desafíos enfrentados. Esta reunión fue crucial para obtener feedback y hacer los ajustes necesarios. Aquí está el link a la sesión de [revisión]().
+Al finalizar nuestra etapa de desarrollo, llevamos a cabo una sesión de review donde presentamos nuestro trabajo, las funcionalidades implementadas y los desafíos enfrentados. Esta reunión fue crucial para obtener feedback y hacer los ajustes necesarios. Aquí está el link a la sesión de [revisión](./Documentación/Review%20de%20Funcionalidades.md).
 
 ## Registro de Esfuerzo
 
-Para garantizar transparencia y mantener un registro claro del trabajo realizado por cada miembro del equipo, hemos documentado en detalle las contribuciones individuales. Puede acceder a este registro en [Registro de Esfuerzo del Equipo]().
+Para garantizar transparencia y mantener un registro claro del trabajo realizado por cada miembro del equipo, hemos documentado en detalle las contribuciones individuales. Puede acceder a este registro en [Registro de Esfuerzo del Equipo](./Documentación/Registro%20de%20Esfuerzo.md).
 
 ## Retrospectiva
 
-Finalmente, como parte de nuestra cultura de mejora continua, realizamos una retrospectiva al final de la etapa. Esto nos permitió reflexionar sobre lo que salió bien, los desafíos enfrentados y las áreas de mejora para las próximas etapas. Puede leer más sobre nuestros hallazgos y reflexiones en [Retrospectiva]().
+Finalmente, como parte de nuestra cultura de mejora continua, realizamos una retrospectiva al final de la etapa. Esto nos permitió reflexionar sobre lo que salió bien, los desafíos enfrentados y las áreas de mejora para las próximas etapas. Puede leer más sobre nuestros hallazgos y reflexiones en [Retrospectiva](./Documentación/Retrospectiva.md).
 
 <br>
 
