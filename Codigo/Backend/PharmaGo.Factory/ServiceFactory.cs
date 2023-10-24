@@ -43,6 +43,7 @@ namespace PharmaGo.Factory
             serviceCollection.AddScoped<IRepository<Drug>, DrugRepository>();
             serviceCollection.AddScoped<IRepository<Product>, ProductRepository>();
             serviceCollection.AddScoped<IRepository<PurchaseDetail>, PurchasesDetailRepository>();
+            serviceCollection.AddScoped<IRepository<PurchaseProductDetail>, PurchasesProductDetailRepository>();
             serviceCollection.AddScoped<IRepository<Role>, RoleRepository>();
 
             serviceCollection.AddDbContext<DbContext, PharmacyGoDbContext>(o => o.UseSqlServer(configuration.GetConnectionString("PharmaGo")));

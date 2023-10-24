@@ -61,7 +61,7 @@ namespace PharmaGo.Test.WebApi.Test
             {
                 BuyerEmail = "roberto.perez@gmail.com",
                 PurchaseDate = new DateTime(2022, 09, 19, 14, 34, 44),
-                Details = purchaseModelDetailRequest
+                DrugsDetails = purchaseModelDetailRequest
             };
 
             unitMeasure1 = new UnitMeasure { Id = 1, Deleted = false, Name = "ml" };
@@ -278,7 +278,7 @@ namespace PharmaGo.Test.WebApi.Test
             purchaseDetail.ElementAt(0).Status = "Approved";
 
             _purchasesManagerMock
-                .Setup(service => service.ApprobePurchaseDetail(1, model.pharmacyId, model.drugCode))
+                .Setup(service => service.ApprovePurchaseDetail(1, model.pharmacyId, model.drugCode))
                 .Returns(purchaseDetail.ElementAt(0));
 
             //Act

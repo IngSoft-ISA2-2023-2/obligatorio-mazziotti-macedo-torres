@@ -1,8 +1,9 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pharmacy } from '../../interfaces/pharmacy';
 import { CommonService } from '../../services/CommonService';
 import { PharmacyService } from '../../services/pharmacy.service';
 import { DrugService } from '../../services/drug.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-custom-header',
@@ -22,7 +23,8 @@ export class CustomHeaderComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private pharmacyService: PharmacyService,
-    private drugService: DrugService
+    private drugService: DrugService,
+    private productsService: ProductService
   ) {
     var self = this;
     this.commonService.onHeaderDataUpdate.subscribe((data: any) => {
@@ -43,16 +45,25 @@ export class CustomHeaderComponent implements OnInit {
   onChangeSelect(id: any): void {
     this.pharmacyId = id;
     this.getDrugsFilter(this.pharmacyId, this.searchValue);
+    this.getProductsFilter(this.pharmacyId, this.searchValue);
   }
 
   onSearch() {
     this.getDrugsFilter(this.pharmacyId, this.searchValue);
+    this.getProductsFilter(this.pharmacyId, this.searchValue);
   }
 
   getDrugsFilter(pharmacyId: string, pharmacyName: string): void {
     this.drugService.getDrugsFilter(pharmacyId, pharmacyName)
-    .subscribe(drugs => {
-      this.commonService.updateSearchData(drugs);
-    });
+      .subscribe(drugs => {
+        this.commonService.updateSearchDrugsData(drugs);
+      });
+  }
+
+  getProductsFilter(pharmacyId: string, pharmacyName: string): void {
+    this.productsService.getProductsFilter(pharmacyId, pharmacyName)
+      .subscribe(products => {
+        this.commonService.updateSearchProductsData(products);
+      });
   }
 }

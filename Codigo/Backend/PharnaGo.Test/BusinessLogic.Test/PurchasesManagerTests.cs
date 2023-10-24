@@ -21,7 +21,9 @@ namespace PharmaGo.Test.BusinessLogic.Test
         private Mock<IRepository<Drug>> _drugsRespository;
         private Mock<IRepository<User>> _userRespository;
         private Mock<IRepository<Session>> _sessionRespository;
+        private Mock<IRepository<Product>> _productRespository;
         private Mock<IRepository<PurchaseDetail>> _purchaseDetailRespository;
+        private Mock<IRepository<PurchaseProductDetail>> _purchaseProductDetailRespository;
         private PurchasesManager _purchasesManager;
         private Purchase purchase;
         private Purchase purchase_2;
@@ -46,9 +48,10 @@ namespace PharmaGo.Test.BusinessLogic.Test
             _drugsRespository = new Mock<IRepository<Drug>>(MockBehavior.Strict);
             _userRespository = new Mock<IRepository<User>>(MockBehavior.Strict);
             _sessionRespository = new Mock<IRepository<Session>>(MockBehavior.Strict);
+            _productRespository = new Mock<IRepository<Product>>(MockBehavior.Strict);
             _purchaseDetailRespository = new Mock<IRepository<PurchaseDetail>>(MockBehavior.Strict);
-            _purchasesManager = new PurchasesManager(_purchaseRespository.Object, _pharmacyRespository.Object, _drugsRespository.Object,
-            _purchaseDetailRespository.Object, _sessionRespository.Object, _userRespository.Object);
+            _purchaseProductDetailRespository = new Mock<IRepository<PurchaseProductDetail>>(MockBehavior.Strict);
+            _purchasesManager = new PurchasesManager(_purchaseRespository.Object, _pharmacyRespository.Object, _drugsRespository.Object, _productRespository.Object, _purchaseDetailRespository.Object, _purchaseProductDetailRespository.Object, _sessionRespository.Object, _userRespository.Object);
 
             unitMeasure1 = new UnitMeasure { Id = 1, Deleted = false, Name = "ml" };
             unitMeasure2 = new UnitMeasure { Id = 2, Deleted = false, Name = "mg" };
@@ -96,6 +99,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
             _userRespository.VerifyAll();
             _sessionRespository.VerifyAll();
             _purchaseDetailRespository.VerifyAll();
+            _purchaseProductDetailRespository.VerifyAll();
         }
 
         [TestMethod]
@@ -553,7 +557,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
             _purchaseDetailRespository.Setup(c => c.Save());
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(1, 1, "XF324");
+            var response = _purchasesManager.ApprovePurchaseDetail(1, 1, "XF324");
 
             //Assert
             Assert.IsNotNull(response);
@@ -572,7 +576,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
                 .Returns(p);
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(0, 1, "XF324");
+            var response = _purchasesManager.ApprovePurchaseDetail(0, 1, "XF324");
         }
 
         [TestMethod]
@@ -586,7 +590,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
                 .Returns(purchase);
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(1, 1, "XF32000");
+            var response = _purchasesManager.ApprovePurchaseDetail(1, 1, "XF32000");
         }
 
         [TestMethod]
@@ -603,7 +607,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
                 .Returns(pharmacy);
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(1, 1, "XF324");
+            var response = _purchasesManager.ApprovePurchaseDetail(1, 1, "XF324");
         }
 
         [TestMethod]
@@ -620,7 +624,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
                 .Returns(pharmacy);
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(1, 1, "XF324");
+            var response = _purchasesManager.ApprovePurchaseDetail(1, 1, "XF324");
         }
 
         [TestMethod]
@@ -638,7 +642,7 @@ namespace PharmaGo.Test.BusinessLogic.Test
                 .Returns(pharmacy);
 
             //Act
-            var response = _purchasesManager.ApprobePurchaseDetail(1, 1, "XF324");
+            var response = _purchasesManager.ApprovePurchaseDetail(1, 1, "XF324");
         }
 
         // reject

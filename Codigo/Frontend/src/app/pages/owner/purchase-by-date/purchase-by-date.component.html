@@ -81,7 +81,38 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of purchase.details">
+                      <tr *ngFor="let item of purchase.drugsDetails">
+                        <td>{{ item.code }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price | currency }}</td>
+                        <td>{{ item.price * item.quantity | currency }}</td>
+                        <td>{{ item.pharmacyName }}</td>
+                        <td [ngStyle]="{ color: getColor(item.status) }">
+                          <b>{{ item.status }}</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table
+                    *ngIf="purchase !== undefined"
+                    cTable
+                    hover
+                    [responsive]="true"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Pharmacy</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of purchase.productsDetails">
                         <td>{{ item.code }}</td>
                         <td>{{ item.name }}</td>
                         <td>{{ item.quantity }}</td>

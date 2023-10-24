@@ -2,10 +2,7 @@
 <c-container class="mt-3">
   <c-row [ngStyle]="{ width: '100%' }">
     <c-col>
-      <c-card
-        *ngFor="let purchase of purchases"
-        [cBorder]="{ top: { color: 'info', width: 3 } }"
-        class="mb-3">
+      <c-card *ngFor="let purchase of purchases" [cBorder]="{ top: { color: 'info', width: 3 } }" class="mb-3">
         <c-row class="g-0">
           <c-card-body cCol [md]="8">
             <p cCardText>
@@ -15,11 +12,7 @@
               <b>Total:</b> {{ purchase.totalAmount | currency }}
             </p>
           </c-card-body>
-          <table
-            *ngIf="purchase !== undefined"
-            cTable
-            hover
-            [responsive]="true">
+          <table *ngIf="purchase !== undefined" cTable hover [responsive]="true">
             <thead>
               <tr>
                 <th scope="col">Code</th>
@@ -34,36 +27,70 @@
               </tr>
             </thead>
             <tbody>
-              <tr
-                *ngFor="
-                  let item of purchase.details">
+              <tr *ngFor="
+                  let item of purchase.drugsDetails">
                 <td>{{ item.code }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>{{ item.price  | currency}}</td>
+                <td>{{ item.price | currency}}</td>
                 <td>{{ (item.price * item.quantity) | currency }}</td>
                 <td>{{ item.pharmacyName }}</td>
                 <td [ngStyle]="{ color: getColor(item.status) }">
                   <b>{{ item.status }}</b>
                 </td>
                 <td>
-                    <button
-                    *ngIf="item.status == 'Pending'"
-                    title="Approve"
-                    class="btn btn-outline-success"
-                    (click)="approve(item.id)">
+                  <button *ngIf="item.status == 'Pending'" title="Approve" class="btn btn-outline-success"
+                    (click)="approveDrug(item.id)">
                     <svg cIcon [cIcon]="icons.cilCheckAlt"></svg>
                   </button>
                 </td>
                 <td>
-                  <button
-                  *ngIf="item.status == 'Pending'"
-                  title="Reject"
-                  class="btn btn-outline-danger"
-                  (click)="reject(item.id)">
-                  <svg cIcon [cIcon]="icons.cilX" ></svg>
-                </button>
-              </td>
+                  <button *ngIf="item.status == 'Pending'" title="Reject" class="btn btn-outline-danger"
+                    (click)="rejectDrug(item.id)">
+                    <svg cIcon [cIcon]="icons.cilX"></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table *ngIf="purchase !== undefined" cTable hover [responsive]="true">
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Total</th>
+                <th scope="col">Pharmacy</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="
+                  let item of purchase.productsDetails">
+                <td>{{ item.code }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price | currency}}</td>
+                <td>{{ (item.price * item.quantity) | currency }}</td>
+                <td>{{ item.pharmacyName }}</td>
+                <td [ngStyle]="{ color: getColor(item.status) }">
+                  <b>{{ item.status }}</b>
+                </td>
+                <td>
+                  <button *ngIf="item.status == 'Pending'" title="Approve" class="btn btn-outline-success"
+                    (click)="approveProduct(item.id)">
+                    <svg cIcon [cIcon]="icons.cilCheckAlt"></svg>
+                  </button>
+                </td>
+                <td>
+                  <button *ngIf="item.status == 'Pending'" title="Reject" class="btn btn-outline-danger"
+                    (click)="rejectProduct(item.id)">
+                    <svg cIcon [cIcon]="icons.cilX"></svg>
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -75,7 +102,7 @@
 
 <!-- [ngStyle]="{ background: 'red' }"
 -->
-  <c-modal [visible]="visible">
+<c-modal [visible]="visible">
   <c-modal-header class="{{approveAction ? 'approveBackground' : 'rejectBackground'}}">
     <h5 cModalTitle class="textBackground">{{modalTitle}}</h5>
     <button (click)="closeModal()" cButtonClose></button>

@@ -32,6 +32,7 @@ import { CreateProductComponent } from './pages/employee/create-product/create-p
 import { EditProductListComponent } from './pages/employee/edit-product-list/edit-product-list.component';
 import { EditProductComponent } from './pages/employee/edit-product/edit-product.component';
 import { DeleteProductComponent } from './pages/employee/delete-product/delete-product.component';
+import { DetailProductComponent } from './pages/home/detail-product/detail-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'home/cart', component: CartComponent },
   { path: 'home/cart/cho', component: ChoComponent },
   { path: 'home/detail/:id', component: DetailComponent },
+  { path: 'home/detail-product/:id', component: DetailProductComponent },
   { path: 'home/tracking', component: TrackingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

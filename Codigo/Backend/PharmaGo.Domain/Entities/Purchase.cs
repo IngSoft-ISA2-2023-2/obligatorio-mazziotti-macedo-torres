@@ -9,6 +9,6 @@ namespace PharmaGo.Domain.Entities
         public string BuyerEmail { get; set; }
         public string TrackingCode { get; set; }
         public ICollection<PurchaseDetail> details { get; set; }
-
+        public ICollection<PurchaseProductDetail> ProductDetails { get; set; }
     }
 }

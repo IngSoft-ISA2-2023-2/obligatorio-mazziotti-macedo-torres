@@ -46,9 +46,19 @@ namespace PharmaGo.WebApi.Controllers
         [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
         public IActionResult Approve(int id, [FromBody] PurchaseAuthorizationModel model)
         {
-            var purchaseDetail = _purchasesManager.ApprobePurchaseDetail(id, model.pharmacyId, model.drugCode);
+            var purchaseDetail = _purchasesManager.ApprovePurchaseDetail(id, model.pharmacyId, model.drugCode);
             var purchaseDetailModelResponse = new PurchaseDetailModelResponse(id, purchaseDetail);
             return Ok(purchaseDetailModelResponse);
+        }
+
+        [HttpPut]
+        [Route("[action]/{id}")]
+        [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
+        public IActionResult ApproveProductPurchase(int id, [FromBody] PurchaseAuthorizationModel model)
+        {
+            var purchaseProductDetail = _purchasesManager.ApproveProductPurchaseDetail(id, model.pharmacyId, model.productCode);
+            var purchaseProductDetailModelResponse = new PurchaseProductDetailModelResponse(id, purchaseProductDetail);
+            return Ok(purchaseProductDetailModelResponse);
         }
 
         [HttpPut]
@@ -59,6 +69,16 @@ namespace PharmaGo.WebApi.Controllers
             var purchaseDetail = _purchasesManager.RejectPurchaseDetail(id, model.pharmacyId, model.drugCode);
             var purchaseDetailModelResponse = new PurchaseDetailModelResponse(id, purchaseDetail);
             return Ok(purchaseDetailModelResponse);
+        }
+
+        [HttpPut]
+        [Route("[action]/{id}")]
+        [AuthorizationFilter(new string[] { nameof(RoleType.Employee) })]
+        public IActionResult RejectProductPurchase(int id, [FromBody] PurchaseAuthorizationModel model)
+        {
+            var purchaseProductDetail = _purchasesManager.RejectPurchaseProductDetail(id, model.pharmacyId, model.productCode);
+            var purchaseProductDetailModelResponse = new PurchaseProductDetailModelResponse(id, purchaseProductDetail);
+            return Ok(purchaseProductDetailModelResponse);
         }
 
         [HttpPost]

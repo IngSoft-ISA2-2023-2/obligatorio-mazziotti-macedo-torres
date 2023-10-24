@@ -51,12 +51,12 @@ export class PurchaseStatusComponent implements OnInit {
     return 'orange';
   }
 
-  approve(index: number): void {
+  approveDrug(index: number): void {
     for (let purchase of this.purchases) {
-      let details = purchase.details;
-      for (let detail of details) {
-        if (detail.id === index) {
-          this.targetItem = detail;
+      let drugsDetails = purchase.drugsDetails;
+      for (let drugsDetail of drugsDetails) {
+        if (drugsDetail.id === index) {
+          this.targetItem = drugsDetail;
           this.targetPurchase = purchase;
           break;
         }
@@ -70,12 +70,31 @@ export class PurchaseStatusComponent implements OnInit {
     }
   }
 
-  reject(index: number): void {
+  approveProduct(index: number): void {
     for (let purchase of this.purchases) {
-      let details = purchase.details;
-      for (let detail of details) {
-        if (detail.id === index) {
-          this.targetItem = detail;
+      let productsDetails = purchase.productsDetails;
+      for (let productsDetail of productsDetails) {
+        if (productsDetail.id === index) {
+          this.targetItem = productsDetail;
+          this.targetPurchase = purchase;
+          break;
+        }
+      }
+    }
+    if (this.targetItem) {
+      this.modalTitle = 'Approve Product from Purchase';
+      this.modalMessage = `Approving '${this.targetItem.code} - ${this.targetItem.name}' from Purchase. Are you sure ?`;
+      this.visible = true;
+      this.approveAction = true;
+    }
+  }
+
+  rejectDrug(index: number): void {
+    for (let purchase of this.purchases) {
+      let drugsDetails = purchase.drugsDetails;
+      for (let drugsDetail of drugsDetails) {
+        if (drugsDetail.id === index) {
+          this.targetItem = drugsDetail;
           this.targetPurchase = purchase;
           break;
         }
@@ -83,6 +102,25 @@ export class PurchaseStatusComponent implements OnInit {
     }
     if (this.targetItem) {
       this.modalTitle = 'Reject Drug from Purchase';
+      this.modalMessage = `Rejecting '${this.targetItem.code} - ${this.targetItem.name}' from Purchase. Are you sure ?`;
+      this.visible = true;
+      this.approveAction = false;
+    }
+  }
+
+  rejectProduct(index: number): void {
+    for (let purchase of this.purchases) {
+      let productsDetails = purchase.productsDetails;
+      for (let productsDetail of productsDetails) {
+        if (productsDetail.id === index) {
+          this.targetItem = productsDetail;
+          this.targetPurchase = purchase;
+          break;
+        }
+      }
+    }
+    if (this.targetItem) {
+      this.modalTitle = 'Reject Product from Purchase';
       this.modalMessage = `Rejecting '${this.targetItem.code} - ${this.targetItem.name}' from Purchase. Are you sure ?`;
       this.visible = true;
       this.approveAction = false;

@@ -35,6 +35,8 @@ namespace PharmaGo.DataAccess.Repositories
             return _context.Set<Purchase>()
                 .Include(x => x.details).ThenInclude(d => d.Drug)
                 .Include(x => x.details).ThenInclude(p => p.Pharmacy)
+                .Include(x => x.ProductDetails).ThenInclude(d => d.Product)
+                .Include(x => x.ProductDetails).ThenInclude(p => p.Pharmacy)
                 .Where(expression).OrderBy(p => p.PurchaseDate);
         }
 
@@ -48,6 +50,8 @@ namespace PharmaGo.DataAccess.Repositories
             return _context.Set<Purchase>()
                 .Include(x => x.details).ThenInclude(d => d.Drug)
                 .Include(x => x.details).ThenInclude(d => d.Pharmacy)
+                .Include(x => x.ProductDetails).ThenInclude(d => d.Product)
+                .Include(x => x.ProductDetails).ThenInclude(p => p.Pharmacy)
                 .FirstOrDefault(expression);
         }
     }
