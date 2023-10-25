@@ -1,0 +1,42 @@
+{
+  "id": "4396779b-eeb6-4593-a198-309f09c60757",
+  "version": "2.0",
+  "name": "Entrega 4",
+  "url": "",
+  "tests": [{
+    "id": "9c52efae-9ca3-4e85-8068-5d0cd4ab1c78",
+    "name": "Alta Producto",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "0c238527-c84c-4069-a95d-e429f1899c9c",
+    "name": "Alta Producto",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "6017e64a-3fd5-41dd-802c-42338419beac",
+    "name": "Baja Producto",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "3d90dad9-21c5-4de0-82fc-c7f77fec0513",
+    "name": "Modificación Producto",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "30847025-3dc0-4e39-ba84-b33dbc40fe1b",
+    "name": "Compra Producto",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": [],
+  "plugins": []
+}
