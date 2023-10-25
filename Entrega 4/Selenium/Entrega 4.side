@@ -3,11 +3,7 @@
   "version": "2.0",
   "name": "Entrega 4",
   "url": "",
-  "tests": [{
-    "id": "9c52efae-9ca3-4e85-8068-5d0cd4ab1c78",
-    "name": "Alta Producto",
-    "commands": []
-  }],
+  "tests": [],
   "suites": [{
     "id": "0c238527-c84c-4069-a95d-e429f1899c9c",
     "name": "Alta Producto",
