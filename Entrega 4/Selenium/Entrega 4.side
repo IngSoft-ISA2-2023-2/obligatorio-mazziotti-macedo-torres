@@ -1468,17 +1468,59 @@
     "id": "c7172d9a-763f-4b10-86b0-adbf5cbccb4e",
     "name": "MP1 - Modificar Detalles de un Producto Existente Exitosamente.",
     "commands": [{
-      "id": "ce628362-b42e-4d92-bbb2-bbee3881d71c",
+      "id": "f9e0e183-59ce-49a1-a3b1-f5f0fa814eca",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "c9082c0e-3d74-4aae-b419-867b89cd0bd1",
+      "id": "a26333f0-aa94-49bb-ab21-fad152773518",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19832361-4b90-48b8-a631-70705c70afb7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec2cd52b-2b4a-4f91-b256-445dcd873b5c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "d55e4abc-faa9-4a76-a4ee-ff4c311e36af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c2fe7c6-fed2-41b3-8730-c78a9424beee",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "c2bc3921-b146-4fe2-b92b-fa819d16e382",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04b74d78-8a3a-4fb3-b8a3-c68218b766b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -1513,7 +1555,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "79238"
     }, {
       "id": "a5227f9c-1ce3-46d5-812f-6b89b1c7c8bc",
       "comment": "",
@@ -1598,16 +1640,15 @@
       "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"79238 - Producto\""
     }, {
       "id": "82ecb7de-9ddb-470a-b6d3-88ab5df67c92",
       "comment": "",
       "command": "click",
       "target": "css=.me-2",
       "targets": [
-        ["css=.me-2", "css:finder"],
-        ["xpath=//button[@type='button']", "xpath:attributes"],
-        ["xpath=//button", "xpath:position"]
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1636,7 +1677,7 @@
       "id": "cb4389cd-49f7-4849-9d8d-9eff9c353ba1",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'79238')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -1659,7 +1700,7 @@
       "command": "type",
       "target": "css=.mb-3:nth-child(2) > .ng-untouched",
       "targets": [],
-      "value": "67890"
+      "value": "87230"
     }, {
       "id": "b111a4a3-aacc-47a1-816e-d9f0f3309ffb",
       "comment": "",
@@ -1774,18 +1815,18 @@
       "id": "dd1c0ceb-c725-43b5-8e1c-4044e6aca5ec",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'87230')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "67890"
+      "value": "87230"
     }, {
       "id": "7f1fc4c2-28e6-402e-a231-6c084ddbd14b",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'87230')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -1796,7 +1837,7 @@
       "id": "cc48c916-aa11-4069-9418-145f347842c9",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'87230')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -1807,7 +1848,7 @@
       "id": "7b055a0f-9a72-487b-9cbe-5ff9b7e33dfc",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'87230')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -1819,17 +1860,59 @@
     "id": "29639c90-626b-4314-8221-f9bda75f4e55",
     "name": "MP2 - Modificar Código a un Código Duplicado.",
     "commands": [{
-      "id": "6174122a-ba52-4432-b48b-9ed9996b7e5e",
+      "id": "b9e19ee6-21b7-4c2a-b395-d4498acf5410",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "47f4f78d-b6b8-4952-ad9b-391f72377d95",
+      "id": "dc8362e3-a0eb-4a51-8909-63e47a6da7ae",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4468c4e4-ae2c-4acb-b2ab-1ef3dec98606",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae0de307-bf21-4d45-ba46-6ab28934bf81",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "159eecd5-c2c0-4391-acdb-3c1ed4b7bb20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f056f8a0-12d2-4e4d-928b-b53ee9331398",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "1f1fa7c2-fd06-4657-8c91-e132e9e75801",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04667b23-57bd-4434-a64e-2eb6dde61fc5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -1864,7 +1947,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "78319"
     }, {
       "id": "688bb7e1-8cc8-46b3-bcf9-53a029d81e6c",
       "comment": "",
@@ -1949,7 +2032,7 @@
       "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - ProductoA\""
+      "value": "Product created. Success creating \"78319 - ProductoA\""
     }, {
       "id": "f641720f-9597-4617-b2f9-8f2799b28964",
       "comment": "",
@@ -1978,7 +2061,7 @@
       "command": "type",
       "target": "css=.mb-3:nth-child(2) > .ng-untouched",
       "targets": [],
-      "value": "67890"
+      "value": "42893"
     }, {
       "id": "e65e65a3-9d86-4d46-b294-edb16590e965",
       "comment": "",
@@ -2051,7 +2134,7 @@
       "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"67890 - ProductoB\""
+      "value": "Product created. Success creating \"42893 - ProductoB\""
     }, {
       "id": "73c74827-e696-4940-9fd2-db384ae11dfa",
       "comment": "",
@@ -2080,16 +2163,15 @@
       "command": "click",
       "target": "css=.mt-4:nth-child(5) .card-footer > .font-weight-bold",
       "targets": [
-        ["css=.mt-4:nth-child(5) .card-footer > .font-weight-bold", "css:finder"],
-        ["xpath=//a[contains(@href, '/employee/edit-product-list')]", "xpath:href"],
-        ["xpath=//c-container[3]/div/div/div/div[2]/a", "xpath:position"]
+        ["css=.ng-star-inserted:nth-child(2) > td > .btn", "css:finder"],
+        ["xpath=//tr[2]/td[6]/button", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "360ea955-35bc-4f51-a06e-80b4ef721396",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'78319')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -2112,7 +2194,7 @@
       "command": "type",
       "target": "css=.mb-3:nth-child(2) > .ng-untouched",
       "targets": [],
-      "value": "67890"
+      "value": "42893"
     }, {
       "id": "8bd117b3-86b2-44b4-bd32-c2433066dbed",
       "comment": "",
@@ -2227,18 +2309,18 @@
       "id": "a0b0e239-b2fb-4847-a4be-1d151ff76e71",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'78319')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "78319"
     }, {
       "id": "67f442da-4f54-415f-9fc4-f111f6195c5f",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'78319')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -2249,7 +2331,7 @@
       "id": "edc5d827-95e7-4922-ba2e-868ba068b22b",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'78319')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2260,7 +2342,7 @@
       "id": "b001ea3c-9d59-4357-ac3d-5679b11a8fdd",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'78319')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2272,17 +2354,59 @@
     "id": "2a72a729-e3e7-40e8-ad16-fca2cbd80bc0",
     "name": "MP3 - Modificar Código a un Código Inválido.",
     "commands": [{
-      "id": "f152c3ce-3b56-4c31-a8eb-9837bce7f405",
+      "id": "0efebf5c-56ab-4da4-bd1f-fc6b25835220",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "5acfe7cc-b5e6-403c-8f39-12f4bb8ae0f7",
+      "id": "406269c1-4f7d-4a7e-927e-865a1cb5d6e6",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cbf2ac7e-7079-4adc-9ab6-e1595a488d48",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b4549e5f-05d7-4b92-9f34-14a7ec8cefa7",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "6805de89-2318-4168-8b57-e65a3d387126",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b0701a64-7768-443f-b655-529f29c6c9ea",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "54a5a96f-49e1-43c7-ac2f-2df232cd113c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b4f69306-3764-45c7-b654-1d588ee53523",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -2317,7 +2441,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "13093"
     }, {
       "id": "e77eb85b-0bd2-4239-bc09-c75f64df00d6",
       "comment": "",
@@ -2399,10 +2523,10 @@
     }, {
       "id": "c40a8fbd-bdf8-4867-8fa2-341aa5d45621",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"13093 - Producto\""
     }, {
       "id": "e9d43e4b-4411-402f-b8f1-b89604fe4877",
       "comment": "",
@@ -2440,7 +2564,7 @@
       "id": "88383d1d-d92d-4a77-91d9-e64f05d2c272",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'13093')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -2479,7 +2603,7 @@
     }, {
       "id": "c0db21fa-5b19-4556-9e6b-82ce91294258",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
       "value": "Error Edit Product failed: The product code is invalid."
@@ -2520,18 +2644,18 @@
       "id": "aef6b06e-a1c9-495f-9287-c7aaed555560",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'13093')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "13093"
     }, {
       "id": "f1c26698-1c90-4a7a-929e-6a71e557f52c",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'13093')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -2542,7 +2666,7 @@
       "id": "69401f27-c044-4cd0-84b3-bddb68893d29",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'13093')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2553,7 +2677,7 @@
       "id": "bbd7ab14-60d2-4b34-87a9-859b64b7d144",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'13093')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2565,17 +2689,59 @@
     "id": "9d2a8645-54db-4cee-8670-10d5ea36419e",
     "name": "MP4 - Modificar Nombre a un Nombre que Excede la Longitud Permitida.",
     "commands": [{
-      "id": "1bb0f6e1-53e6-49a4-87f9-e77803f304e2",
+      "id": "4f1b82cd-cb5b-40e9-a374-5905c797514d",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "4c04a8c8-6e73-4e78-8943-2672bf6b2a09",
+      "id": "6ad5bc19-c6bf-43f8-a136-0855d00c22eb",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4330e535-848f-401e-a664-66005478b4b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89c337c4-a02e-46da-a598-b26039b6675c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "b2ff9c9b-1ae1-4f11-a00e-3153fd87e22a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb141eec-f344-4ab4-bb72-4ce0bcc3b01f",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "7a3c07ef-26fc-4b4b-80cc-193e17f3893e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2188ba9-5439-4d32-a4e2-af7028731944",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -2610,7 +2776,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "13094"
     }, {
       "id": "71fbf411-3167-45e0-9b46-0c674e5c4e62",
       "comment": "",
@@ -2692,10 +2858,10 @@
     }, {
       "id": "cd40f058-10fe-4c6c-9fef-a745840c943f",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"13094 - Producto\""
     }, {
       "id": "5944ae95-4771-41c0-93cd-3ff0f3501c88",
       "comment": "",
@@ -2776,7 +2942,7 @@
     }, {
       "id": "8b3b2d53-26f7-42d1-8785-1ec220399784",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
       "value": "Error Edit Product failed: The product name is too long."
@@ -2817,18 +2983,18 @@
       "id": "6a556d3f-d7ea-430f-a181-5684a12ff491",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'13094')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "13094"
     }, {
       "id": "86077b6b-a3a7-4bf9-b044-58c066f9c9e5",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'13094')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -2839,7 +3005,7 @@
       "id": "676ae977-4e73-4e5a-a00d-a587c9832f52",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'13094')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2850,7 +3016,7 @@
       "id": "c7909604-7bac-461b-97fe-b1712fb73e34",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'13094')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -2862,17 +3028,59 @@
     "id": "88ec91f3-976d-43c2-8e4d-f84d554732b6",
     "name": "MP5 - Modificar Descripción a una Descripción que Excede la Longitud Permitida.",
     "commands": [{
-      "id": "9d2b672c-fabf-4f6f-8d74-2f34eb1ff821",
+      "id": "e04d6dee-47e5-4217-b05c-3f403535ec68",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "3ffd1782-5a48-48b0-946e-097178123270",
+      "id": "b21445e1-3786-48a9-a811-79f0db76ce08",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "33c12faf-9638-4edf-a694-f63e9378d204",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe638ca9-eeea-4614-89af-2469714a7cf1",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "fa3302e1-cc1a-4ca0-87e4-e4e7d638b23e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b744ff56-4a4a-4cbe-895f-e99f17225f65",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "d2af063b-5e15-472a-9f40-d58f75cab632",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36682cfe-f6ab-4a9b-9ec0-c2307ebb20a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -2907,7 +3115,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "13095"
     }, {
       "id": "c07b8f8c-ff1a-4e69-8608-0e4ce9c12c14",
       "comment": "",
@@ -2989,10 +3197,10 @@
     }, {
       "id": "a314a112-b109-4d69-87fd-2736231bd5d5",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"13095 - Producto\""
     }, {
       "id": "c1fee569-3a5b-46bb-9c43-7f4126b3a1b8",
       "comment": "",
@@ -3030,7 +3238,7 @@
       "id": "6aa935ee-85c3-4798-89df-81ed3f3ec021",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'13095')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -3073,7 +3281,7 @@
     }, {
       "id": "9d322f09-ecf5-4e66-814f-10fde4537364",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
       "value": "Error Edit Product failed: The product description is too long."
@@ -3114,18 +3322,18 @@
       "id": "e19d2905-bfed-4de7-a552-9a46c8ab6206",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'13095')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "13095"
     }, {
       "id": "69c9c844-dcae-49e6-b12f-61e72514e577",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'13095')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -3136,7 +3344,7 @@
       "id": "50030546-1106-4bb3-a749-f769603fb374",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'13095')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -3147,7 +3355,7 @@
       "id": "05fddd28-e788-4b46-b6c4-664d8f6c92a1",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'13095')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -3159,17 +3367,59 @@
     "id": "cddfe79f-4f78-4fc2-8e2d-3dd78787e94a",
     "name": "MP6 - Modificar Precio a un Valor No Decimal.",
     "commands": [{
-      "id": "816b3c3e-6495-412c-9bb9-c6078cfad4a2",
+      "id": "a1c73370-5f3c-40ea-bba5-1c8560d0034a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "a1b046ed-17c9-4e29-a32b-75ef3b0176f7",
+      "id": "4c072d21-d3fb-4892-8ce8-4975ee83458b",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e878260-3788-42cd-8b5f-fd67bc59a5f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd2ef33c-4e22-489b-b71a-7314b12d6ed3",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "6e364a53-fc23-4d19-9c4a-a5880d2fd71d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f52025b-679d-4320-8a94-fc1bfcc44508",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "09ddc68c-9d1c-44db-b5f1-d9d8df677c3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36549986-d375-4686-9c9d-a5becabbeac5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -3204,7 +3454,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "13096"
     }, {
       "id": "cecfd6d6-9fc6-44ab-bcd6-c233e67523fb",
       "comment": "",
@@ -3286,10 +3536,10 @@
     }, {
       "id": "814d8bce-2cd0-4328-adfe-412c5f5a9189",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"13096 - Producto\""
     }, {
       "id": "b6e1c399-7566-484b-b498-99f02cbfa31b",
       "comment": "",
@@ -3327,7 +3577,7 @@
       "id": "b13ef806-9ea3-4d9b-9f4e-7554085c2d34",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'13096')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -3370,10 +3620,10 @@
     }, {
       "id": "e5ce9ed3-bc98-451d-8b9a-71cce41bc0c0",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Error Edit Product failed: TODO."
+      "value": "Error Edit Product failed: undefined"
     }, {
       "id": "350914b9-003d-4d11-ba09-ea48efb619dc",
       "comment": "",
@@ -3411,18 +3661,18 @@
       "id": "c43644cf-2857-4ae0-8f19-fda4b951c42f",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'13096')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "13096"
     }, {
       "id": "dd5a573e-2d44-40d1-a1bc-9a2639fbbba3",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'13096')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -3433,7 +3683,7 @@
       "id": "504e3dd3-0f45-499d-80c1-9b6ce45b04f3",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'13096')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -3444,7 +3694,7 @@
       "id": "37b2950f-45b9-4164-8501-b7bc837e9e72",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'13096')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -3456,17 +3706,59 @@
     "id": "0d3c0d12-8a48-4aae-8cf3-347be3b15a81",
     "name": "MP7 - Cancelar la Modificación de un Producto.",
     "commands": [{
-      "id": "28c319d7-15d2-41fa-9f14-a28f8393c2a0",
+      "id": "225eea2a-81e8-4b9b-9884-359f597b2ce9",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200/employee",
+      "target": "http://localhost:4200/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "e43366a5-8dfb-44f3-acb9-0e4c85189b70",
+      "id": "d459ec6e-9590-432d-a03b-cbd9dac09d7a",
       "comment": "",
       "command": "setWindowSize",
-      "target": "889x983",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e10b5d4e-fcfa-4e15-a881-4181b974e3bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23bf3865-c4b9-4028-b589-fc1c468a7004",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mb-3 > .ng-untouched",
+      "targets": [],
+      "value": "employee1"
+    }, {
+      "id": "f4f1717e-f4a6-435c-93b5-155c83925138",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbdae5f3-b8f3-4fb7-a7d9-403d5c3a8d10",
+      "comment": "",
+      "command": "type",
+      "target": "css=.ng-pristine:nth-child(2)",
+      "targets": [],
+      "value": "Aqwertyu2."
+    }, {
+      "id": "2e07c10a-f750-4420-ae71-e70b3e4e6ae9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0940aade-62a0-4ddf-ae32-8b0acc323220",
+      "comment": "",
+      "command": "click",
+      "target": "css=.me-2",
       "targets": [],
       "value": ""
     }, {
@@ -3501,7 +3793,7 @@
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "12345"
+      "value": "13097"
     }, {
       "id": "904628c7-58fb-4e1f-9a87-59431717bce7",
       "comment": "",
@@ -3583,10 +3875,10 @@
     }, {
       "id": "add731a9-481d-4605-881e-dbf90d27f13c",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=.customToastBody",
       "targets": [],
-      "value": "Product created. Success creating \"12345 - Producto\""
+      "value": "Product created. Success creating \"13097 - Producto\""
     }, {
       "id": "fab7a74f-9494-4f3d-8318-f774df08d986",
       "comment": "",
@@ -3624,7 +3916,7 @@
       "id": "5154b239-3e3e-4bf9-9963-f8c2e3f87850",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//tr[td[contains(text(),'13097')]]//button",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//td[6]/button", "xpath:position"]
@@ -3656,18 +3948,18 @@
       "id": "c10abe2a-a7d2-4bdf-85ff-895db6a78583",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(1)",
+      "target": "xpath=//tr[td[contains(text(),'13097')]]/td[1]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
         ["xpath=//td[contains(.,'Producto')]", "xpath:innerText"]
       ],
-      "value": "12345"
+      "value": "13097"
     }, {
       "id": "3b4b1539-aa4f-4675-b5a1-7e8831ff2a4a",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(2)",
+      "target": "xpath=//tr[td[contains(text(),'13097')]]/td[2]",
       "targets": [
         ["css=td:nth-child(2)", "css:finder"],
         ["xpath=//td[2]", "xpath:position"],
@@ -3678,7 +3970,7 @@
       "id": "4e6bb731-c1fd-4f3c-af85-7778e06d323f",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(3)",
+      "target": "xpath=//tr[td[contains(text(),'13097')]]/td[3]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
@@ -3689,7 +3981,7 @@
       "id": "9df5c36c-e86b-4f2c-af25-5ee3fb39f2bb",
       "comment": "",
       "command": "assertText",
-      "target": "css=td:nth-child(4)",
+      "target": "xpath=//tr[td[contains(text(),'13097')]]/td[4]",
       "targets": [
         ["css=td:nth-child(3)", "css:finder"],
         ["xpath=//td[3]", "xpath:position"],
