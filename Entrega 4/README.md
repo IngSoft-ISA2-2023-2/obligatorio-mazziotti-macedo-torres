@@ -21,11 +21,11 @@ Más información sobre los tests realizados y sus resultados puede encontrarse 
 
 ## Revisión y Feedback
 
-Después de nuestra fase intensiva de testing, realizamos una sesión comprensiva de revisión y feedback. Esta abarcó tanto los bugs corregidos como las nuevas funcionalidades implementadas. El feedback obtenido fue invaluable para realizar ajustes finales y prepararnos para la próxima fase. El registro de esta sesión puede encontrarse en [Revisión de Avances]().
+Después de nuestra fase intensiva de testing, realizamos una sesión comprensiva de revisión y feedback. Esta abarcó tanto los bugs corregidos como las nuevas funcionalidades implementadas. El feedback obtenido fue invaluable para realizar ajustes finales y prepararnos para la próxima fase. El registro de esta sesión puede encontrarse en [Revisión de Avances](./Documentación/Review.md).
 
 ## Registro de Esfuerzo
 
-Para garantizar transparencia y mantener un registro claro del trabajo realizado por cada miembro del equipo durante esta etapa, hemos documentado en detalle el esfuerzo de cada integrante. Puedes acceder a este registro en [Registro de Esfuerzo del Equipo](./).
+Para garantizar transparencia y mantener un registro claro del trabajo realizado por cada miembro del equipo durante esta etapa, hemos documentado en detalle el esfuerzo de cada integrante. Puedes acceder a este registro en [Registro de Esfuerzo del Equipo](./Documentación/Registro%20de%20Esfuerzo.md).
 
 ## Métricas DevOps
 
@@ -33,7 +33,7 @@ Como parte de nuestro compromiso con la mejora continua y la transparencia en to
 
 ## Retrospectiva y Reflexión
 
-Concluyendo esta etapa, realizamos una retrospectiva basada en el método DAKI. Esta nos brindó una oportunidad para revisar nuestros logros, desafíos y áreas de mejora. Las conclusiones y reflexiones están disponibles en [Retrospectiva DAKI]().
+Concluyendo esta etapa, realizamos una retrospectiva basada en el método DAKI. Esta nos brindó una oportunidad para revisar nuestros logros, desafíos y áreas de mejora. Las conclusiones y reflexiones están disponibles en [Retrospectiva DAKI](./Documentación/Retrospectiva.md).
 
 <br>
 
