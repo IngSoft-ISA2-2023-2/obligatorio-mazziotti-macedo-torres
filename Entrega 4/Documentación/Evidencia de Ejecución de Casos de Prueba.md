@@ -1,0 +1,9 @@
+# Evidencia de Ejecución de Casos de Prueba
+
+A continuación se encuentran videos donde se demuestra la ejecución exitosa de las pruebas realizadas con Selenium.
+
+Se decidió hacer un video por cada funcionalidad probada, en el cual se incluyen todos los escenarios correspondientes. Estas funcionalidades son:
+* [Alta de Producto](https://fi365-my.sharepoint.com/:v:/g/personal/fm251662_fi365_ort_edu_uy/EU_0oupnRB9HiBuqvCVA0OMBTRLzw7i6widv9Ro46G2o-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=oCn2G2)
+* [Baja de Producto](https://fi365-my.sharepoint.com/:v:/g/personal/fm251662_fi365_ort_edu_uy/EXyY6eSIoQ1Jncr-iDyFeIgBzSRGZ39q687-AIxjCdZNlA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=i9avra)
+* [Modificación de Producto](https://fi365-my.sharepoint.com/:v:/g/personal/fm251662_fi365_ort_edu_uy/EXiuedRUiH9EkntSyJVIIhoBaMVu_uUaDVj_1MlKyvTt5A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=PQCWLm)
+* [Compra](https://fi365-my.sharepoint.com/:v:/g/personal/fm251662_fi365_ort_edu_uy/EUpUB_SRFf5Mh4kYMHMxEx0BWiFlJWXOKX14iSKbH_7A0Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=hRGef1)
