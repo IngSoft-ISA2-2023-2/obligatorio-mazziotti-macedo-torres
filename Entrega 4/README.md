@@ -29,7 +29,7 @@ Para garantizar transparencia y mantener un registro claro del trabajo realizado
 
 ## Métricas DevOps
 
-Como parte de nuestro compromiso con la mejora continua y la transparencia en todos nuestros procesos, hemos recopilado y analizado las métricas DevOps relevantes de todas nuestras entregas hasta la fecha. Puedes revisar estas métricas en [Métricas DevOps]().
+Como parte de nuestro compromiso con la mejora continua y la transparencia en todos nuestros procesos, hemos recopilado y analizado las métricas DevOps relevantes de todas nuestras entregas hasta la fecha. Puedes revisar estas métricas en [Métricas DevOps](./Documentación/Informe%20de%20Métricas.md).
 
 ## Retrospectiva y Reflexión
 
