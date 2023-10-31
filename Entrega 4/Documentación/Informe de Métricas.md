@@ -73,7 +73,13 @@ Flow Efficiency = Cycle Time / Lead Time x 100%
 | US   | Modificación de Produtos | 53.33% |
 | US   | Compra de Productos | 56.25% |
 
+**Referencias sobre Flow Efficiency**: Según David J Anderson de la Kanban University, una buena Flow Efficiency en Kanban es considerada cualquier valor por encima del 40%. Sin embargo, es vital tener en cuenta que los equipos que recién se inician en la gestión de proyectos Lean o aquellos que no se centran en su flujo suelen tener una eficiencia de flujo entre el 5% y el 15%. 
 
+Es por ello que podemos afirmar que, de a cuerdo a Anderson, en general este obligatorio cuenta con una buena eficiencia de flujo, principalmente en las user stories.
+
+Para profundizar en este tema, se pueden revisar los siguientes enlaces:
+1. [Kanban University: Flow Efficiency](https://kanban.university/flow-efficiency-a-great-metric-you-probably-arent-using/)
+2. [Kanbanize Blog: How to Measure Flow Efficiency on a Kanban Board](https://businessmap.io/blog/how-to-measure-the-flow-efficiency-of-a-process-on-a-kanban-board).
 
 ---
 
