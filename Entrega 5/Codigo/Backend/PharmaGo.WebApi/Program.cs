@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("MyAllowedOrigins",
         policy =>
         {
-            policy.WithOrigins("*") // note the port is included 
+            policy.AllowAnyOrigin() // note the port is included 
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
@@ -34,9 +34,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.UseCors("MyAllowedOrigins");
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
